@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOCUMENTACION.md</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+  <style>
+    /* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+    /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+    body {
+      font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+      font-size: var(--vscode-markdown-font-size, 14px);
+      padding: 0 26px;
+      line-height: var(--vscode-markdown-line-height, 22px);
+      word-wrap: break-word;
+    }
+
+    #code-csp-warning {
+      position: fixed;
+      top: 0;
+      right: 0;
+      color: white;
+      margin: 16px;
+      text-align: center;
+      font-size: 12px;
+      font-family: sans-serif;
+      background-color: #444444;
+      cursor: pointer;
+      padding: 6px;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+    }
+
+    #code-csp-warning:hover {
+      text-decoration: none;
+      background-color: #007acc;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+    }
+
+    body.scrollBeyondLastLine {
+      margin-bottom: calc(100vh - 22px);
+    }
+
+    body.showEditorSelection .code-line {
+      position: relative;
+    }
+
+    body.showEditorSelection .code-active-line:before,
+    body.showEditorSelection .code-line:hover:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -12px;
+      height: 100%;
+    }
+
+    body.showEditorSelection li.code-active-line:before,
+    body.showEditorSelection li.code-line:hover:before {
+      left: -30px;
+    }
+
+    .vscode-light.showEditorSelection .code-active-line:before {
+      border-left: 3px solid rgba(0, 0, 0, 0.15);
+    }
+
+    .vscode-light.showEditorSelection .code-line:hover:before {
+      border-left: 3px solid rgba(0, 0, 0, 0.40);
+    }
+
+    .vscode-light.showEditorSelection .code-line .code-line:hover:before {
+      border-left: none;
+    }
+
+    .vscode-dark.showEditorSelection .code-active-line:before {
+      border-left: 3px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .vscode-dark.showEditorSelection .code-line:hover:before {
+      border-left: 3px solid rgba(255, 255, 255, 0.60);
+    }
+
+    .vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+      border-left: none;
+    }
+
+    .vscode-high-contrast.showEditorSelection .code-active-line:before {
+      border-left: 3px solid rgba(255, 160, 0, 0.7);
+    }
+
+    .vscode-high-contrast.showEditorSelection .code-line:hover:before {
+      border-left: 3px solid rgba(255, 160, 0, 1);
+    }
+
+    .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+      border-left: none;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 1px solid -webkit-focus-ring-color;
+      outline-offset: -1px;
+    }
+
+    hr {
+      border: 0;
+      height: 2px;
+      border-bottom: 2px solid;
+    }
+
+    h1 {
+      padding-bottom: 0.3em;
+      line-height: 1.2;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: normal;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table>thead>tr>th {
+      text-align: left;
+      border-bottom: 1px solid;
+    }
+
+    table>thead>tr>th,
+    table>thead>tr>td,
+    table>tbody>tr>th,
+    table>tbody>tr>td {
+      padding: 5px 10px;
+    }
+
+    table>tbody>tr+tr>td {
+      border-top: 1px solid;
+    }
+
+    blockquote {
+      margin: 0 7px 0 5px;
+      padding: 0 16px 0 10px;
+      border-left-width: 5px;
+      border-left-style: solid;
+    }
+
+    code {
+      font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+      font-size: 1em;
+      line-height: 1.357em;
+    }
+
+    body.wordWrap pre {
+      white-space: pre-wrap;
+    }
+
+    pre:not(.hljs),
+    pre.hljs code>div {
+      padding: 16px;
+      border-radius: 3px;
+      overflow: auto;
+    }
+
+    pre code {
+      color: var(--vscode-editor-foreground);
+      tab-size: 4;
+    }
+
+    /** Theming */
+
+    .vscode-light pre {
+      background-color: rgba(220, 220, 220, 0.4);
+    }
+
+    .vscode-dark pre {
+      background-color: rgba(10, 10, 10, 0.4);
+    }
+
+    .vscode-high-contrast pre {
+      background-color: rgb(0, 0, 0);
+    }
+
+    .vscode-high-contrast h1 {
+      border-color: rgb(0, 0, 0);
+    }
+
+    .vscode-light table>thead>tr>th {
+      border-color: rgba(0, 0, 0, 0.69);
+    }
+
+    .vscode-dark table>thead>tr>th {
+      border-color: rgba(255, 255, 255, 0.69);
+    }
+
+    .vscode-light h1,
+    .vscode-light hr,
+    .vscode-light table>tbody>tr+tr>td {
+      border-color: rgba(0, 0, 0, 0.18);
+    }
+
+    .vscode-dark h1,
+    .vscode-dark hr,
+    .vscode-dark table>tbody>tr+tr>td {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+  </style>
+
+  <style>
+    /* Tomorrow Theme */
+    /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+    /* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+    /* Tomorrow Comment */
+    .hljs-comment,
+    .hljs-quote {
+      color: #8e908c;
+    }
+
+    /* Tomorrow Red */
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-tag,
+    .hljs-name,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-regexp,
+    .hljs-deletion {
+      color: #c82829;
+    }
+
+    /* Tomorrow Orange */
+    .hljs-number,
+    .hljs-built_in,
+    .hljs-builtin-name,
+    .hljs-literal,
+    .hljs-type,
+    .hljs-params,
+    .hljs-meta,
+    .hljs-link {
+      color: #f5871f;
+    }
+
+    /* Tomorrow Yellow */
+    .hljs-attribute {
+      color: #eab700;
+    }
+
+    /* Tomorrow Green */
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition {
+      color: #718c00;
+    }
+
+    /* Tomorrow Blue */
+    .hljs-title,
+    .hljs-section {
+      color: #4271ae;
+    }
+
+    /* Tomorrow Purple */
+    .hljs-keyword,
+    .hljs-selector-tag {
+      color: #8959a8;
+    }
+
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      color: #4d4d4c;
+      padding: 0.5em;
+    }
+
+    .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .hljs-strong {
+      font-weight: bold;
+    }
+  </style>
+
+  <style>
+    /*
+ * Markdown PDF CSS
+ */
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+      padding: 0 12px;
+    }
+
+    pre {
+      background-color: #f8f8f8;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+    }
+
+    pre:not(.hljs) {
+      padding: 23px;
+      line-height: 19px;
+    }
+
+    blockquote {
+      background: rgba(127, 127, 127, 0.1);
+      border-color: rgba(0, 122, 204, 0.5);
+    }
+
+    .emoji {
+      height: 1.4em;
+    }
+
+    code {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    /* for inline code */
+    :not(pre):not(.hljs)>code {
+      color: #C9AE75;
+      /* Change the old color so it seems less like an error */
+      font-size: inherit;
+    }
+
+    /* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+    .page {
+      page-break-after: always;
+    }
+  </style>
+
+  <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+        ? 'dark'
+        : 'default'
+    });
+  </script>
+  <h1 id="documentaci%C3%B3n-t%C3%A9cnica--ranking-qs--sostenibilidad-epn">Documentación Técnica — Ranking QS ·
+    Sostenibilidad EPN</h1>
+  <blockquote>
+    <p><strong>Versión:</strong> 1.1<br>
+      <strong>Fecha:</strong> Junio 2026<br>
+      <strong>Proyecto:</strong> Sitio web de Sostenibilidad para la Escuela Politécnica Nacional (EPN), orientado al
+      ranking QS Sustainability.
+    </p>
+  </blockquote>
+  <hr>
+  <h2 id="tabla-de-contenidos">Tabla de Contenidos</h2>
+  <ol>
+    <li><a href="#1-visi%C3%B3n-general-del-proyecto">Visión General del Proyecto</a></li>
+    <li><a href="#2-estructura-de-archivos">Estructura de Archivos</a></li>
+    <li><a href="#3-archivos-html--contenido-quemado-hardcoded">Archivos HTML — Contenido Quemado (Hardcoded)</a></li>
+    <li><a href="#4-funciones-javascript-contenidojs">Funciones JavaScript (<code>contenido.js</code>)</a></li>
+    <li><a href="#5-formato-de-los-archivos-json-de-contenido">Formato de los Archivos JSON de Contenido</a></li>
+    <li><a href="#6-c%C3%B3mo-agregar-nuevas-secciones">Cómo Agregar Nuevas Secciones</a></li>
+    <li><a href="#7-sistema-de-traducci%C3%B3n-espa%C3%B1ol--ingl%C3%A9s">Sistema de Traducción (Español / Inglés)</a>
+    </li>
+    <li><a href="#8-restricciones-y-limitaciones">Restricciones y Limitaciones</a></li>
+    <li><a href="#9-consejos-de-uso">Consejos de Uso</a></li>
+    <li><a href="#10-gu%C3%ADa-para-modificaciones-futuras">Guía para Modificaciones Futuras</a></li>
+    <li><a href="#11-referencia-r%C3%A1pida-de-tipos-de-contenido">Referencia Rápida de Tipos de Contenido</a></li>
+    <li><a href="#12-men%C3%BA-hamburguesa-responsive">Menú Hamburguesa Responsive</a></li>
+  </ol>
+  <hr>
+  <h2 id="1-visi%C3%B3n-general-del-proyecto">1. Visión General del Proyecto</h2>
+  <p>Este sitio web es un portal estático (sin backend/servidor) que presenta la información de sostenibilidad de la
+    Escuela Politécnica Nacional para el ranking QS Sustainability. Está dividido en secciones temáticas con contenido
+    dinámico renderizado desde archivos JSON.</p>
+  <h3 id="arquitectura-general">Arquitectura General</h3>
+  <pre class="hljs"><code><div>┌──────────────────────────────────────────────────────┐
+│                  Archivos HTML                       │
+│  (estructura, header, footer, contenedores vacíos)   │
+└────────────────────┬─────────────────────────────────┘
+                     │ cargan
+                     ▼
+┌──────────────────────────────────────────────────────┐
+│               contenido.js                           │
+│  (motor de renderizado dinámico)                     │
+└──────┬──────────────────────────────┬────────────────┘
+       │ lee                          │ lee
+       ▼                              ▼
+┌────────────────────┐    ┌───────────────────────────┐
+│ translations.json  │    │  {pagina}.json             │
+│ (textos comunes)   │    │  (contenido de la página)  │
+└────────────────────┘    └───────────────────────────┘
+</div></code></pre>
+  <h3 id="p%C3%A1ginas-del-sitio">Páginas del Sitio</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Página</th>
+        <th>Archivo HTML</th>
+        <th>Archivo JSON</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Inicio</td>
+        <td><code>index.html</code></td>
+        <td>— (usa <code>translations.json</code>)</td>
+        <td>Landing page con video hero y navegación visual</td>
+      </tr>
+      <tr>
+        <td>Informe Anual</td>
+        <td><code>informe-anual.html</code></td>
+        <td><code>informe-anual.json</code></td>
+        <td>Documentos de rendición de cuentas</td>
+      </tr>
+      <tr>
+        <td>Impacto Ambiental</td>
+        <td><code>impacto-ambiental.html</code></td>
+        <td><code>impacto-ambiental.json</code></td>
+        <td>Políticas y acciones ambientales</td>
+      </tr>
+      <tr>
+        <td>Impacto Social</td>
+        <td><code>impacto-social.html</code></td>
+        <td><code>impacto-social.json</code></td>
+        <td>Igualdad, salud, bienestar</td>
+      </tr>
+      <tr>
+        <td>Gobernanza</td>
+        <td><code>gobernanza.html</code></td>
+        <td><code>gobernanza.json</code></td>
+        <td>Estructura organizacional, ética, democracia</td>
+      </tr>
+      <tr>
+        <td>Info. Adicional</td>
+        <td><code>info-adicional.html</code></td>
+        <td><code>info-adicional.json</code></td>
+        <td>Datos estadísticos complementarios</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2 id="2-estructura-de-archivos">2. Estructura de Archivos</h2>
+  <pre class="hljs"><code><div>ranking-QS/
+├── index.html                    ← Página de inicio
+├── informe-anual.html            ← Página de Informe Anual
+├── impacto-ambiental.html        ← Página de Impacto Ambiental
+├── impacto-social.html           ← Página de Impacto Social
+├── gobernanza.html               ← Página de Gobernanza
+├── info-adicional.html           ← Página de Información Adicional
+├── contenido.js                  ← Motor principal de renderizado
+├── style.css                     ← Hoja de estilos global
+├── contenido/                    ← Archivos JSON de contenido
+│   ├── translations.json         ← Traducciones comunes (header/footer/index)
+│   ├── informe-anual.json
+│   ├── impacto-ambiental.json
+│   ├── impacto-social.json
+│   ├── gobernanza.json
+│   └── info-adicional.json
+├── img/                          ← Imágenes del sitio
+│   ├── escudo-web-1.png          ← Logo header
+│   ├── logo-epn-LINEAS.webp      ← Logo footer
+│   ├── backgoound.png            ← Fondo global (blur)
+│   ├── videoweb3.mp4             ← Video hero (desktop)
+│   ├── videoweb.mp4              ← Video hero (móvil, max-width 768px)
+│   ├── gobernanza/               ← Imágenes de gobernanza
+│   ├── impacto-ambiental/        ← Imágenes de impacto ambiental
+│   └── impacto-social/           ← Imágenes de impacto social
+├── pdfs/                         ← Documentos PDF embebidos
+│   ├── Gobernanza/
+│   ├── impacto-ambiental/
+│   ├── impacto-social/
+│   └── informe-anual/
+└── otros/                        ← Archivos descargables (ZIP, DOCX, etc.)
+</div></code></pre>
+  <hr>
+  <h2 id="3-archivos-html--contenido-quemado-hardcoded">3. Archivos HTML — Contenido Quemado (Hardcoded)</h2>
+  <p>Los archivos HTML contienen estructura fija que <strong>no cambia dinámicamente</strong>. A continuación se detalla
+    cada elemento quemado.</p>
+  <h3 id="31-elementos-comunes-a-todas-las-p%C3%A1ginas-interiores">3.1 Elementos Comunes a TODAS las Páginas Interiores
+  </h3>
+  <p>Las páginas <code>gobernanza.html</code>, <code>impacto-ambiental.html</code>, <code>impacto-social.html</code>,
+    <code>informe-anual.html</code> e <code>info-adicional.html</code> comparten la misma estructura idéntica:
+  </p>
+  <h4 id="header-navegaci%C3%B3n-superior">Header (Navegación Superior)</h4>
+  <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- QUEMADO: Logo de la institución --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/escudo-web-1.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Logo EOPN"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"60"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Backdrop (fondo oscuro del menú móvil) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-backdrop"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nav-backdrop"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Nav con ID para el menú hamburguesa --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-nav"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"page-nav-menu"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Botón cerrar (visible solo en móvil) --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-close-btn"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nav-close-btn"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Cerrar menú"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- QUEMADO: Enlaces de navegación (el texto se traduce vía JS) --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./"</span>&gt;</span>Inicio<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"informe-anual.html"</span>&gt;</span>Informe Anual<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"impacto-ambiental.html"</span>&gt;</span>Impacto Ambiental<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"impacto-social.html"</span>&gt;</span>Impacto Social<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"gobernanza.html"</span>&gt;</span>Gobernanza<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info-adicional.html"</span>&gt;</span>Información Adicional<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Botón de idioma --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"language-toggle-btn"</span>&gt;</span>EN<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Botón hamburguesa (visible solo en móvil &lt; 768px) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-btn"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hamburger-btn"</span>
+  <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Abrir menú"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"page-nav-menu"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+  <blockquote>
+    <p><strong>⚠️ Nota:</strong> Si se agrega una nueva sección/página al sitio, se debe actualizar la navegación en
+      <strong>TODOS</strong> los archivos HTML manualmente.
+    </p>
+  </blockquote>
+  <h4 id="contenedor-din%C3%A1mico">Contenedor Dinámico</h4>
+  <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- QUEMADO: Título y subtítulo (se llenan desde JSON vía JS) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-title"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-subtitle"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Contenedor donde JS inyecta todo el contenido --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content-blocks-container"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+  <h4 id="footer">Footer</h4>
+  <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- QUEMADO: Logo del footer --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img\logo-epn-LINEAS.webp"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Logo EPN"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"60"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Descripción institucional (texto se traduce vía JS) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer-desc"</span>&gt;</span>Comprometidos con el desarrollo sostenible...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Redes sociales con URLs fijas --&gt;</span>
+Instagram: https://www.instagram.com/epn_ecuador
+Facebook:  https://www.facebook.com/EPNQuito
+X (Twitter): https://x.com/EPNEcuador
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Información de contacto (textos se traducen vía JS) --&gt;</span>
+Dirección: Av. Ladrón de Guevara E11-253
+Teléfono:  (+593) 2 2976 300
+Email:     info@epn.edu.ec
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Íconos SVG de redes sociales (inline) --&gt;</span>
+</div></code></pre>
+  <h4 id="barra-superior-y-script">Barra Superior y Script</h4>
+  <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- QUEMADO: Barra decorativa azul oscuro de 8px --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-top-bar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Referencia al script principal --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"contenido.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+  <h3 id="32-p%C3%A1gina-de-inicio-indexhtml">3.2 Página de Inicio (<code>index.html</code>)</h3>
+  <p>Además de los elementos comunes, <code>index.html</code> tiene contenido exclusivo:</p>
+  <pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- QUEMADO: Video hero autoplay con fuentes responsive --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hero-img"</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">loop</span> <span class="hljs-attr">muted</span> <span class="hljs-attr">playsinline</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Fuente optimizada para móvil (máx. 768px) --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/videoweb.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 768px)"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Fuente para desktop --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/videoweb3.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Título principal (texto se traduce vía JS) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header-section"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Iconos de navegación visual (SVG inline) --&gt;</span>
+<span class="hljs-comment">&lt;!-- 5 botones circulares con íconos SVG personalizados: --&gt;</span>
+<span class="hljs-comment">&lt;!-- - Informe Anual (ícono de documento) --&gt;</span>
+<span class="hljs-comment">&lt;!-- - Impacto Ambiental (ícono de globo) --&gt;</span>
+<span class="hljs-comment">&lt;!-- - Impacto Social (ícono de personas) --&gt;</span>
+<span class="hljs-comment">&lt;!-- - Gobernanza (ícono de templo/columnas) --&gt;</span>
+<span class="hljs-comment">&lt;!-- - Información Adicional (ícono de lupa con "i") --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- QUEMADO: Texto de cada nav-label --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-label"</span>&gt;</span>INFORME ANUAL<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-label"</span>&gt;</span>IMPACTO AMBIENTAL<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-label"</span>&gt;</span>IMPACTO SOCIAL<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-label"</span>&gt;</span>GOBERNANZA<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-label"</span>&gt;</span>INFORMACIÓN ADICIONAL<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</div></code></pre>
+  <h3 id="33-t%C3%ADtulos-title-de-cada-p%C3%A1gina-seo">3.3 Títulos <code>&lt;title&gt;</code> de cada página (SEO)
+  </h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Archivo</th>
+        <th>Título <code>&lt;title&gt;</code> quemado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>index.html</code></td>
+        <td><code>Sostenibilidad 2026 \| Escuela Politécnica Nacional</code></td>
+      </tr>
+      <tr>
+        <td><code>gobernanza.html</code></td>
+        <td><code>Gobernanza \| Escuela Politécnica Nacional</code></td>
+      </tr>
+      <tr>
+        <td><code>impacto-ambiental.html</code></td>
+        <td><code>Impacto Ambiental \| Escuela Politécnica Nacional</code></td>
+      </tr>
+      <tr>
+        <td><code>impacto-social.html</code></td>
+        <td><code>Impacto Social \| Escuela Politécnica Nacional</code></td>
+      </tr>
+      <tr>
+        <td><code>informe-anual.html</code></td>
+        <td><code>Informe Anual \| Escuela Politécnica Nacional</code></td>
+      </tr>
+      <tr>
+        <td><code>info-adicional.html</code></td>
+        <td><code>Información Adicional \| Escuela Politécnica Nacional</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote>
+    <p><strong>Nota:</strong> Estos títulos NO se traducen dinámicamente. Si se necesita traducción del
+      <code>&lt;title&gt;</code>, habría que agregar lógica en <code>contenido.js</code>.
+    </p>
+  </blockquote>
+  <hr>
+  <h2 id="4-funciones-javascript-contenidojs">4. Funciones JavaScript (<code>contenido.js</code>)</h2>
+  <p>El archivo <code>contenido.js</code> es el motor central del sitio. Contiene <strong>1298 líneas</strong>
+    organizadas en secciones numeradas.</p>
+  <h3 id="40-protecci%C3%B3n-de-contenido-l%C3%ADneas-1%E2%80%9323">4.0 Protección de Contenido (Líneas 1–23)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Función/Evento</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>contextmenu</code> listener</td>
+        <td>Deshabilita el clic derecho en toda la página</td>
+      </tr>
+      <tr>
+        <td><code>dragstart</code> listener</td>
+        <td>Impide arrastrar elementos (drag &amp; drop)</td>
+      </tr>
+      <tr>
+        <td><code>keydown</code> listener</td>
+        <td>Bloquea <code>Ctrl+S</code> / <code>Cmd+S</code> para evitar guardar la página</td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote>
+    <p><strong>Propósito:</strong> Proteger parcialmente el contenido (imágenes, PDFs) contra descarga casual.</p>
+  </blockquote>
+  <h3 id="41-variables-globales-y-mapeo-l%C3%ADneas-29%E2%80%9345">4.1 Variables Globales y Mapeo (Líneas 29–45)</h3>
+  <pre class="hljs"><code><div><span class="hljs-keyword">let</span> commonTranslations = {};  <span class="hljs-comment">// Traducciones del header/footer</span>
+<span class="hljs-keyword">let</span> pageContent = {};          <span class="hljs-comment">// Contenido JSON de la página actual</span>
+<span class="hljs-keyword">let</span> contentLoaded = <span class="hljs-literal">false</span>;     <span class="hljs-comment">// Flag de carga completa</span>
+<span class="hljs-keyword">let</span> currentLanguage = localStorage.getItem(<span class="hljs-string">'selectedLanguage'</span>) || <span class="hljs-string">'es'</span>;
+</div></code></pre>
+  <p><strong><code>pageContentMap</code></strong> — Mapea el nombre del archivo HTML al nombre del JSON:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Clave (URL)</th>
+        <th>Valor (JSON sin extensión)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>'index.html'</code>, <code>''</code>, <code>'./'</code></td>
+        <td><code>null</code> (no tiene JSON propio)</td>
+      </tr>
+      <tr>
+        <td><code>'informe-anual.html'</code></td>
+        <td><code>'informe-anual'</code></td>
+      </tr>
+      <tr>
+        <td><code>'impacto-ambiental.html'</code></td>
+        <td><code>'impacto-ambiental'</code></td>
+      </tr>
+      <tr>
+        <td><code>'impacto-social.html'</code></td>
+        <td><code>'impacto-social'</code></td>
+      </tr>
+      <tr>
+        <td><code>'gobernanza.html'</code></td>
+        <td><code>'gobernanza'</code></td>
+      </tr>
+      <tr>
+        <td><code>'info-adicional.html'</code></td>
+        <td><code>'info-adicional'</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="42-carga-de-contenido--loadcontent-l%C3%ADneas-51%E2%80%9372">4.2 Carga de Contenido —
+    <code>loadContent()</code> (Líneas 51–72)
+  </h3>
+  <pre class="hljs"><code><div>loadContent()
+  ├── fetch('contenido/translations.json')  → commonTranslations
+  ├── getContentFile()                       → determina qué JSON cargar
+  ├── fetch('contenido/{pagina}.json')       → pageContent
+  └── initializeContent()                    → renderiza todo
+</div></code></pre>
+  <ul>
+    <li><strong><code>loadContent()</code></strong>: Función <code>async</code> que carga primero las traducciones
+      comunes y luego el JSON específico de la página.</li>
+    <li><strong><code>getContentFile()</code></strong>: Extrae el nombre del archivo actual de la URL y lo busca en
+      <code>pageContentMap</code>.
+    </li>
+  </ul>
+  <h3 id="43-inicializaci%C3%B3n--initializecontent-l%C3%ADneas-84%E2%80%9391">4.3 Inicialización —
+    <code>initializeContent()</code> (Líneas 84–91)
+  </h3>
+  <p>Orquesta la inicialización completa en este orden:</p>
+  <ol>
+    <li><code>applySavedLanguage()</code> — Restaura el idioma guardado en <code>localStorage</code></li>
+    <li><code>setupLanguageToggle()</code> — Configura el botón ES/EN</li>
+    <li><code>setupNavigationMarking()</code> — Marca con <code>.active</code> el enlace de la página actual</li>
+    <li><code>generateDynamicContent()</code> — Genera todo el contenido desde JSON</li>
+    <li><code>setupHashUpdateOnToggle()</code> — Sincroniza URL hash con acordeones</li>
+    <li><code>handleHashNavigation()</code> — Abre el acordeón indicado por <code>#hash</code></li>
+    <li><code>setupMobileMenu()</code> — Inicializa el menú hamburguesa responsive <em>(nuevo)</em></li>
+  </ol>
+  <h3 id="44-cambio-de-idioma--applylanguagelang-l%C3%ADneas-98%E2%80%93141">4.4 Cambio de Idioma —
+    <code>applyLanguage(lang)</code> (Líneas 98–141)
+  </h3>
+  <p>Flujo al cambiar idioma:</p>
+  <ol>
+    <li>Guarda el idioma en <code>localStorage</code> y <code>document.documentElement.lang</code></li>
+    <li><strong>Guarda el estado</strong> de los acordeones abiertos (sus IDs)</li>
+    <li>Actualiza metadatos (título, subtítulo)</li>
+    <li>Traduce header y footer</li>
+    <li><strong>Regenera todos los bloques</strong> de contenido en el nuevo idioma</li>
+    <li><strong>Restaura</strong> los acordeones que estaban abiertos</li>
+  </ol>
+  <h3 id="45-generaci%C3%B3n-de-contenido-din%C3%A1mico">4.5 Generación de Contenido Dinámico</h3>
+  <h4 id="generatedynamiccontent-l%C3%ADneas-147%E2%80%93168"><code>generateDynamicContent()</code> (Líneas 147–168)
+  </h4>
+  <p>Punto de entrada para renderizar contenido. Decide entre:</p>
+  <ul>
+    <li><strong>Sistema de bloques</strong> (<code>pageContent.blocks</code>) — Método actual y preferido</li>
+    <li><strong>Sistema legacy</strong> (<code>pageContent.statistics</code>,
+      <code>pageContent.evaluationCriteria</code>, <code>pageContent.sections</code>) — Compatibilidad retroactiva
+    </li>
+  </ul>
+  <h4 id="generatecontentblocksblocks-lang-customcontainer-l%C3%ADneas-185%E2%80%93272">
+    <code>generateContentBlocks(blocks, lang, customContainer)</code> (Líneas 185–272)
+  </h4>
+  <p><strong>Función principal de renderizado.</strong> Itera sobre el array <code>blocks</code> y crea elementos según
+    el <code>type</code>:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo (<code>type</code>)</th>
+        <th>Qué genera</th>
+        <th>Propiedad requerida</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&quot;accordion&quot;</code></td>
+        <td>Grupo de acordeones anidables</td>
+        <td><code>sections: [...]</code></td>
+      </tr>
+      <tr>
+        <td><code>&quot;evaluationCriteria&quot;</code></td>
+        <td>Lista de criterios con ✓/✗ y tooltips</td>
+        <td><code>items: [...]</code></td>
+      </tr>
+      <tr>
+        <td><code>&quot;statistics&quot;</code></td>
+        <td>Tarjetas de estadísticas numéricas</td>
+        <td><code>statistics: [...]</code></td>
+      </tr>
+      <tr>
+        <td><code>&quot;subtitle&quot;</code></td>
+        <td>Título decorativo con descripción y lista opcional</td>
+        <td><code>es</code>/<code>en</code> con <code>title</code>, <code>description</code>, <code>list</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="createaccordionelementsection-lang-parentid-l%C3%ADneas-331%E2%80%93402">
+    <code>createAccordionElement(section, lang, parentId)</code> (Líneas 331–402)
+  </h4>
+  <p>Crea un elemento <code>&lt;details&gt;</code> (acordeón) recursivamente:</p>
+  <ul>
+    <li>Si es raíz → clase <code>accordion-root</code></li>
+    <li>Si es hijo → clase <code>accordion-nested</code></li>
+    <li>Genera el <code>&lt;summary&gt;</code> con el título traducido</li>
+    <li>Renderiza <code>content</code> (PDF, slider, etc.) si existe</li>
+    <li>Procesa <code>children</code> recursivamente (acordeones anidados o subtítulos)</li>
+  </ul>
+  <h4 id="createcriterionitemitem-index-lang-l%C3%ADneas-482%E2%80%93547">
+    <code>createCriterionItem(item, index, lang)</code> (Líneas 482–547)
+  </h4>
+  <p>Genera un item de criterio de evaluación con:</p>
+  <ul>
+    <li>Ícono de estado (<code>✓</code> verde o <code>✗</code> rojo) según <code>item.complied</code></li>
+    <li>Nombre del criterio</li>
+    <li>Ícono <code>!</code> de información con tooltip hover/focus/click</li>
+  </ul>
+  <h3 id="46-renderizado-de-contenido-multimedia--rendercontentcontent-lang-l%C3%ADneas-553%E2%80%93576">4.6 Renderizado
+    de Contenido Multimedia — <code>renderContent(content, lang)</code> (Líneas 553–576)</h3>
+  <p>Switch que delega la creación de elementos según <code>content.type</code>:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Función creadora</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&quot;pdf&quot;</code></td>
+        <td><code>createPDFElement(src)</code></td>
+        <td><code>&lt;embed&gt;</code> para mostrar PDF inline</td>
+      </tr>
+      <tr>
+        <td><code>&quot;url&quot;</code></td>
+        <td><code>createIframeElement(src)</code></td>
+        <td><code>&lt;iframe&gt;</code> para URL externa</td>
+      </tr>
+      <tr>
+        <td><code>&quot;link&quot;</code></td>
+        <td><code>createLinkElement(url, label)</code></td>
+        <td>Botón enlace externo (<code>target=&quot;_blank&quot;</code>)</td>
+      </tr>
+      <tr>
+        <td><code>&quot;slider&quot;</code></td>
+        <td><code>createSliderElement(images)</code></td>
+        <td>Carrusel de imágenes con fade</td>
+      </tr>
+      <tr>
+        <td><code>&quot;overlay-slider&quot;</code></td>
+        <td><code>createOverlaySliderElement(slides)</code></td>
+        <td>Carrusel con texto superpuesto</td>
+      </tr>
+      <tr>
+        <td><code>&quot;download&quot;</code></td>
+        <td><code>createDownloadElement(src, filename)</code></td>
+        <td>Botón de descarga directa</td>
+      </tr>
+      <tr>
+        <td><code>&quot;youtube&quot;</code></td>
+        <td><code>createYoutubeElement(src)</code></td>
+        <td>Iframe de YouTube embebido</td>
+      </tr>
+      <tr>
+        <td><code>&quot;statistics&quot;</code></td>
+        <td><code>createStatisticsElement(stats, lang)</code></td>
+        <td>Grid de tarjetas estadísticas</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="47-funciones-de-creaci%C3%B3n-de-elementos">4.7 Funciones de Creación de Elementos</h3>
+  <h4 id="createpdfelementsrc-l%C3%ADneas-650%E2%80%93664"><code>createPDFElement(src)</code> (Líneas 650–664)</h4>
+  <ul>
+    <li>Crea un <code>&lt;embed&gt;</code> con <code>type=&quot;application/pdf&quot;</code></li>
+    <li>Dimensiones: 100% ancho × 600px alto</li>
+  </ul>
+  <h4 id="createiframeelementsrc-l%C3%ADneas-666%E2%80%93678"><code>createIframeElement(src)</code> (Líneas 666–678)
+  </h4>
+  <ul>
+    <li>Crea un <code>&lt;iframe&gt;</code> para cargar URLs externas</li>
+    <li>Dimensiones: 100% ancho × 600px alto</li>
+  </ul>
+  <h4 id="createlinkelementurl-label-l%C3%ADneas-684%E2%80%93697"><code>createLinkElement(url, label)</code> (Líneas
+    684–697)</h4>
+  <ul>
+    <li>Crea un botón-enlace (<code>&lt;a&gt;</code>) estilizado</li>
+    <li>Abre en nueva pestaña (<code>target=&quot;_blank&quot;</code>)</li>
+    <li>Si no hay <code>label</code>, muestra &quot;Acceder&quot;</li>
+  </ul>
+  <h4 id="createsliderelementimages-l%C3%ADneas-699%E2%80%93752"><code>createSliderElement(images)</code> (Líneas
+    699–752)</h4>
+  <p>Carrusel de imágenes con:</p>
+  <ul>
+    <li>Transición fade entre slides</li>
+    <li>Botones anterior/siguiente (<code>❮</code> / <code>❯</code>)</li>
+    <li>Bullets de navegación</li>
+    <li>Inicialización diferida con <code>setTimeout</code></li>
+  </ul>
+  <h4 id="createoverlaysliderelementslides-l%C3%ADneas-758%E2%80%93832"><code>createOverlaySliderElement(slides)</code>
+    (Líneas 758–832)</h4>
+  <p>Carrusel similar al slider pero con overlay de información:</p>
+  <ul>
+    <li>Imagen de fondo</li>
+    <li>Capa superpuesta con título (<code>h3</code>) y descripción (<code>p</code>)</li>
+    <li>Navegación con dots y botones</li>
+  </ul>
+  <h4 id="createdownloadelementsrc-filename-l%C3%ADneas-582%E2%80%93594">
+    <code>createDownloadElement(src, filename)</code> (Líneas 582–594)
+  </h4>
+  <ul>
+    <li>Crea un enlace <code>&lt;a&gt;</code> con atributo <code>download</code></li>
+    <li>Texto: <code>📥 Descargar: {filename}</code></li>
+  </ul>
+  <h4 id="createyoutubeelementyoutubeurl-l%C3%ADneas-620%E2%80%93644"><code>createYoutubeElement(youtubeUrl)</code>
+    (Líneas 620–644)</h4>
+  <ul>
+    <li>Extrae el video ID con <code>extractYoutubeVideoId()</code></li>
+    <li>Soporta formatos: <code>youtube.com/watch?v=</code>, <code>youtu.be/</code>, <code>youtube.com/embed/</code>
+    </li>
+    <li>Crea iframe embed con <code>allow=&quot;accelerometer; autoplay; ...&quot;</code></li>
+  </ul>
+  <h4 id="createstatisticcarddato-titulo-l%C3%ADneas-424%E2%80%93440"><code>createStatisticCard(dato, titulo)</code>
+    (Líneas 424–440)</h4>
+  <ul>
+    <li>Crea tarjeta con número grande (<code>.statistics-number</code>) y etiqueta (<code>.statistics-label</code>)
+    </li>
+  </ul>
+  <h3 id="48-inicializaci%C3%B3n-de-sliders">4.8 Inicialización de Sliders</h3>
+  <h4 id="initslidersliderid-l%C3%ADneas-838%E2%80%93927"><code>initSlider(sliderId)</code> (Líneas 838–927)</h4>
+  <p>Slider con scroll horizontal:</p>
+  <ul>
+    <li>Soporte mouse drag (desktop)</li>
+    <li>Soporte touch swipe (móvil)</li>
+    <li>Threshold de 50px para cambiar slide</li>
+    <li>Sincronización de bullets</li>
+  </ul>
+  <h4 id="initfadeslidersliderid-l%C3%ADneas-933%E2%80%931006"><code>initFadeSlider(sliderId)</code> (Líneas 933–1006)
+  </h4>
+  <p>Slider con transición fade:</p>
+  <ul>
+    <li>Muestra/oculta slides con clase <code>.active</code></li>
+    <li>Ajuste dinámico de altura según la imagen</li>
+    <li>Oculta botones en primer/último slide</li>
+  </ul>
+  <h4 id="initoverlayslidersliderid-l%C3%ADneas-1232%E2%80%931291"><code>initOverlaySlider(sliderId)</code> (Líneas
+    1232–1291)</h4>
+  <p>Slider de overlay:</p>
+  <ul>
+    <li>Similar a fade slider pero con dots en lugar de bullets</li>
+    <li>Soporte para contenido superpuesto</li>
+  </ul>
+  <h3 id="49-comportamiento-de-acordeones">4.9 Comportamiento de Acordeones</h3>
+  <h4 id="setupnestedaccordionbehavior-l%C3%ADneas-1012%E2%80%931030"><code>setupNestedAccordionBehavior()</code>
+    (Líneas 1012–1030)</h4>
+  <ul>
+    <li>Al abrir un sub-acordeón, cierra automáticamente sus hermanos</li>
+    <li>Solo aplica a acordeones <code>.accordion-nested</code></li>
+  </ul>
+  <h4 id="setuphashupdateontoggle-l%C3%ADneas-1036%E2%80%931072"><code>setupHashUpdateOnToggle()</code> (Líneas
+    1036–1072)</h4>
+  <ul>
+    <li>Cuando se abre un acordeón → actualiza <code>#hash</code> en la URL</li>
+    <li>Cuando se cierra → busca hermano abierto o padre como nuevo hash</li>
+    <li>Si nada está abierto → limpia el hash</li>
+  </ul>
+  <h4 id="handlehashnavigation-l%C3%ADneas-1078%E2%80%931100"><code>handleHashNavigation()</code> (Líneas 1078–1100)
+  </h4>
+  <ul>
+    <li>Al cargar la página con un <code>#hash</code>, abre el acordeón correspondiente</li>
+    <li>Abre todos los padres del acordeón target</li>
+    <li>Hace scroll suave hasta el elemento</li>
+    <li>Escucha <code>hashchange</code> para navegación dinámica</li>
+  </ul>
+  <h3 id="410-actualizaci%C3%B3n-de-headerfooter">4.10 Actualización de Header/Footer</h3>
+  <h4 id="setupnavigationmarking-l%C3%ADneas-1108%E2%80%931138"><code>setupNavigationMarking()</code> (Líneas 1108–1138)
+  </h4>
+  <ul>
+    <li>Detecta la página actual comparando <code>pathname</code></li>
+    <li>Agrega clase <code>.active</code> al enlace correspondiente en la navegación</li>
+  </ul>
+  <h4 id="updateheaderlang-l%C3%ADneas-1140%E2%80%931163"><code>updateHeader(lang)</code> (Líneas 1140–1163)</h4>
+  <ul>
+    <li>Traduce los textos de navegación del header desde <code>commonTranslations</code></li>
+  </ul>
+  <h4 id="updatefooterlang-l%C3%ADneas-1165%E2%80%931203"><code>updateFooter(lang)</code> (Líneas 1165–1203)</h4>
+  <ul>
+    <li>Traduce: descripción del footer, título &quot;Contacto&quot;, dirección, teléfono, email</li>
+    <li>Traduce enlaces de información</li>
+  </ul>
+  <h4 id="updatelanguagebuttonlang-l%C3%ADneas-1206%E2%80%931211"><code>updateLanguageButton(lang)</code> (Líneas
+    1206–1211)</h4>
+  <ul>
+    <li>Muestra &quot;EN&quot; cuando el idioma actual es español</li>
+    <li>Muestra &quot;ES&quot; cuando el idioma actual es inglés</li>
+  </ul>
+  <h3 id="411-toggle-de-idioma--setuplanguagetoggle-l%C3%ADneas-1217%E2%80%931226">4.11 Toggle de Idioma —
+    <code>setupLanguageToggle()</code> (Líneas 1217–1226)
+  </h3>
+  <ul>
+    <li>Configura el evento <code>click</code> del botón <code>#language-toggle-btn</code></li>
+    <li>Alterna entre <code>'es'</code> y <code>'en'</code></li>
+    <li>Llama a <code>applyLanguage(newLang)</code> que regenera todo</li>
+  </ul>
+  <h3 id="412-men%C3%BA-hamburguesa-m%C3%B3vil--setupmobilemenu-l%C3%ADneas-1304%E2%80%931382">4.12 Menú Hamburguesa
+    Móvil — <code>setupMobileMenu()</code> (Líneas 1304–1382)</h3>
+  <p>Gestiona el menú responsive para pantallas &lt; 768px. Busca los elementos por ID y registra todos los listeners
+    necesarios.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Acción del usuario</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Clic en <code>#hamburger-btn</code></td>
+        <td>Alterna apertura/cierre del panel</td>
+      </tr>
+      <tr>
+        <td>Clic en <code>#nav-close-btn</code></td>
+        <td>Cierra el panel</td>
+      </tr>
+      <tr>
+        <td>Clic en el backdrop</td>
+        <td>Cierra el panel</td>
+      </tr>
+      <tr>
+        <td>Clic en cualquier <code>&lt;a&gt;</code> del nav</td>
+        <td>Cierra el panel (via event delegation)</td>
+      </tr>
+      <tr>
+        <td>Tecla <code>Escape</code></td>
+        <td>Cierra el panel y devuelve el foco al botón</td>
+      </tr>
+      <tr>
+        <td>Resize a ≥ 768px</td>
+        <td>Cierra el panel automáticamente</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Clases CSS gestionadas:</p>
+  <ul>
+    <li><code>show-menu</code> → en <code>#page-nav-menu</code> (panel visible)</li>
+    <li><code>is-active</code> → en <code>#hamburger-btn</code> (animación a ✕)</li>
+    <li><code>is-visible</code> → en <code>#nav-backdrop</code> (fondo oscuro)</li>
+    <li><code>nav-open</code> → en <code>&lt;body&gt;</code> (bloquea el scroll)</li>
+  </ul>
+  <p>Atributos ARIA actualizados:</p>
+  <ul>
+    <li><code>aria-expanded</code> en <code>#hamburger-btn</code> (<code>&quot;true&quot;</code> /
+      <code>&quot;false&quot;</code>)
+    </li>
+  </ul>
+  <h3 id="413-punto-de-entrada-l%C3%ADnea-1298">4.13 Punto de Entrada (Línea 1298)</h3>
+  <pre class="hljs"><code><div>loadContent();  <span class="hljs-comment">// Inicia todo el proceso</span>
+</div></code></pre>
+  <h2 id="5-formato-de-los-archivos-json-de-contenido">5. Formato de los Archivos JSON de Contenido</h2>
+  <h3 id="51-estructura-ra%C3%ADz">5.1 Estructura Raíz</h3>
+  <p>Cada archivo JSON de contenido sigue esta estructura:</p>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"metadata"</span>: {
+    <span class="hljs-attr">"es"</span>: {
+      <span class="hljs-attr">"pageTitle"</span>: <span class="hljs-string">"Título en español"</span>,
+      <span class="hljs-attr">"pageSubtitle"</span>: <span class="hljs-string">"Subtítulo opcional"</span>
+    },
+    <span class="hljs-attr">"en"</span>: {
+      <span class="hljs-attr">"pageTitle"</span>: <span class="hljs-string">"Title in English"</span>,
+      <span class="hljs-attr">"pageSubtitle"</span>: <span class="hljs-string">"Optional subtitle"</span>
+    }
+  },
+  <span class="hljs-attr">"blocks"</span>: [
+    <span class="hljs-comment">// Array de bloques de contenido</span>
+  ]
+}
+</div></code></pre>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Obligatorio</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>metadata</code></td>
+        <td>Object</td>
+        <td>✅ Sí</td>
+        <td>Contiene títulos de página por idioma</td>
+      </tr>
+      <tr>
+        <td><code>metadata.es</code></td>
+        <td>Object</td>
+        <td>✅ Sí</td>
+        <td>Metadata en español</td>
+      </tr>
+      <tr>
+        <td><code>metadata.en</code></td>
+        <td>Object</td>
+        <td>✅ Sí</td>
+        <td>Metadata en inglés</td>
+      </tr>
+      <tr>
+        <td><code>metadata.{lang}.pageTitle</code></td>
+        <td>String</td>
+        <td>✅ Sí</td>
+        <td>Título que aparece en <code>&lt;h1&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>metadata.{lang}.pageSubtitle</code></td>
+        <td>String</td>
+        <td>❌ No</td>
+        <td>Subtítulo bajo el título</td>
+      </tr>
+      <tr>
+        <td><code>blocks</code></td>
+        <td>Array</td>
+        <td>✅ Sí</td>
+        <td>Array de bloques de contenido</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="52-tipos-de-bloques">5.2 Tipos de Bloques</h3>
+  <h4 id="521-bloque-accordion">5.2.1 Bloque <code>accordion</code></h4>
+  <p>Crea uno o más acordeones desplegables.</p>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"accordion"</span>,
+  <span class="hljs-attr">"sections"</span>: [
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"identificador-unico"</span>,
+      <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Título en español"</span> },
+      <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title in English"</span> },
+      <span class="hljs-attr">"content"</span>: { ... },
+      <span class="hljs-attr">"children"</span>: [ ... ]
+    }
+  ]
+}
+</div></code></pre>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Obligatorio</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>type</code></td>
+        <td><code>&quot;accordion&quot;</code></td>
+        <td>✅</td>
+        <td>Identificador del tipo de bloque</td>
+      </tr>
+      <tr>
+        <td><code>sections</code></td>
+        <td>Array</td>
+        <td>✅</td>
+        <td>Lista de secciones (acordeones raíz)</td>
+      </tr>
+      <tr>
+        <td><code>sections[].id</code></td>
+        <td>String</td>
+        <td>✅</td>
+        <td>ID único para el <code>&lt;details&gt;</code>. Se usa en el hash de la URL</td>
+      </tr>
+      <tr>
+        <td><code>sections[].es.title</code></td>
+        <td>String</td>
+        <td>✅</td>
+        <td>Título del acordeón en español</td>
+      </tr>
+      <tr>
+        <td><code>sections[].en.title</code></td>
+        <td>String</td>
+        <td>✅</td>
+        <td>Título del acordeón en inglés</td>
+      </tr>
+      <tr>
+        <td><code>sections[].content</code></td>
+        <td>Object</td>
+        <td>❌</td>
+        <td>Contenido multimedia del acordeón</td>
+      </tr>
+      <tr>
+        <td><code>sections[].children</code></td>
+        <td>Array</td>
+        <td>❌</td>
+        <td>Sub-acordeones o sub-elementos anidados</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="522-bloque-subtitle">5.2.2 Bloque <code>subtitle</code></h4>
+  <p>Muestra un título decorativo con descripción y lista opcional.</p>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"subtitle"</span>,
+  <span class="hljs-attr">"es"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Título en español"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Descripción del contexto"</span>,
+    <span class="hljs-attr">"list"</span>: [
+      <span class="hljs-string">"Elemento 1"</span>,
+      <span class="hljs-string">"Elemento 2"</span>
+    ]
+  },
+  <span class="hljs-attr">"en"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title in English"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Context description"</span>,
+    <span class="hljs-attr">"list"</span>: [
+      <span class="hljs-string">"Item 1"</span>,
+      <span class="hljs-string">"Item 2"</span>
+    ]
+  }
+}
+</div></code></pre>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Obligatorio</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>type</code></td>
+        <td><code>&quot;subtitle&quot;</code></td>
+        <td>✅</td>
+        <td>Identificador</td>
+      </tr>
+      <tr>
+        <td><code>{lang}.title</code></td>
+        <td>String</td>
+        <td>✅</td>
+        <td>Título del subtítulo</td>
+      </tr>
+      <tr>
+        <td><code>{lang}.description</code></td>
+        <td>String</td>
+        <td>❌</td>
+        <td>Texto descriptivo</td>
+      </tr>
+      <tr>
+        <td><code>{lang}.list</code></td>
+        <td>Array&lt;String&gt;</td>
+        <td>❌</td>
+        <td>Lista de viñetas</td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote>
+    <p><strong>Nota:</strong> Los bloques <code>subtitle</code> también pueden usarse <strong>dentro</strong> de
+      <code>children</code> de un acordeón.
+    </p>
+  </blockquote>
+  <h4 id="523-bloque-statistics">5.2.3 Bloque <code>statistics</code></h4>
+  <p>Muestra tarjetas de estadísticas numéricas en grid.</p>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"statistics"</span>,
+  <span class="hljs-attr">"statistics"</span>: [
+    {
+      <span class="hljs-attr">"es"</span>: {
+        <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"3 787 461.25 kWh/año"</span>,
+        <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Energía total procedente de energías renovables"</span>
+      },
+      <span class="hljs-attr">"en"</span>: {
+        <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"3,787,461.25 kWh/year"</span>,
+        <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Total energy from renewable sources"</span>
+      }
+    }
+  ]
+}
+</div></code></pre>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Obligatorio</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>type</code></td>
+        <td><code>&quot;statistics&quot;</code></td>
+        <td>✅</td>
+        <td>Identificador</td>
+      </tr>
+      <tr>
+        <td><code>statistics</code></td>
+        <td>Array</td>
+        <td>✅</td>
+        <td>Lista de datos estadísticos</td>
+      </tr>
+      <tr>
+        <td><code>statistics[].{lang}.dato</code></td>
+        <td>String</td>
+        <td>✅</td>
+        <td>Valor numérico o dato destacado</td>
+      </tr>
+      <tr>
+        <td><code>statistics[].{lang}.titulo</code></td>
+        <td>String</td>
+        <td>✅</td>
+        <td>Descripción del dato</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="524-bloque-evaluationcriteria">5.2.4 Bloque <code>evaluationCriteria</code></h4>
+  <p>Muestra una lista de criterios con cumplimiento (✓/✗).</p>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"evaluationCriteria"</span>,
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"complied"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"es"</span>: {
+        <span class="hljs-attr">"criterion"</span>: <span class="hljs-string">"Nombre del criterio"</span>,
+        <span class="hljs-attr">"detailText"</span>: <span class="hljs-string">"Descripción del tooltip"</span>
+      },
+      <span class="hljs-attr">"en"</span>: {
+        <span class="hljs-attr">"criterion"</span>: <span class="hljs-string">"Criterion name"</span>,
+        <span class="hljs-attr">"detailText"</span>: <span class="hljs-string">"Tooltip description"</span>
+      }
+    }
+  ]
+}
+</div></code></pre>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Obligatorio</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>type</code></td>
+        <td><code>&quot;evaluationCriteria&quot;</code></td>
+        <td>✅</td>
+        <td>Identificador</td>
+      </tr>
+      <tr>
+        <td><code>items</code></td>
+        <td>Array</td>
+        <td>✅</td>
+        <td>Lista de criterios</td>
+      </tr>
+      <tr>
+        <td><code>items[].complied</code></td>
+        <td>Boolean</td>
+        <td>✅</td>
+        <td><code>true</code> = cumple (✓ verde), <code>false</code> = no cumple (✗ rojo)</td>
+      </tr>
+      <tr>
+        <td><code>items[].{lang}.criterion</code></td>
+        <td>String</td>
+        <td>✅</td>
+        <td>Nombre del criterio</td>
+      </tr>
+      <tr>
+        <td><code>items[].{lang}.detailText</code></td>
+        <td>String</td>
+        <td>❌</td>
+        <td>Texto del tooltip al hacer hover en <code>!</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="53-tipos-de-contenido-content">5.3 Tipos de Contenido (<code>content</code>)</h3>
+  <p>El objeto <code>content</code> dentro de una sección de acordeón puede tener estos tipos:</p>
+  <h4 id="pdf--visor-de-pdf-embebido"><code>pdf</code> — Visor de PDF embebido</h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"pdf"</span>,
+  <span class="hljs-attr">"src"</span>: <span class="hljs-string">"pdfs/carpeta/archivo.pdf"</span>
+}
+</div></code></pre>
+  <ul>
+    <li><code>src</code>: Ruta relativa al archivo PDF</li>
+    <li>Se puede agregar <code>#page=N</code> para abrir en una página específica</li>
+  </ul>
+  <h4 id="url--iframe-de-sitio-web-externo"><code>url</code> — Iframe de sitio web externo</h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"url"</span>,
+  <span class="hljs-attr">"src"</span>: <span class="hljs-string">"https://sitio-externo.com/pagina"</span>
+}
+</div></code></pre>
+  <h4 id="link--bot%C3%B3n-enlace-externo"><code>link</code> — Botón enlace externo</h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"link"</span>,
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://www.epn.edu.ec/pagina"</span>,
+  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Texto del botón"</span>
+}
+</div></code></pre>
+  <h4 id="slider--carrusel-de-im%C3%A1genes"><code>slider</code> — Carrusel de imágenes</h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"slider"</span>,
+  <span class="hljs-attr">"images"</span>: [
+    {
+      <span class="hljs-attr">"src"</span>: <span class="hljs-string">"img/carpeta/imagen.jpg"</span>,
+      <span class="hljs-attr">"alt"</span>: <span class="hljs-string">"Texto alternativo"</span>
+    }
+  ]
+}
+</div></code></pre>
+  <h4 id="overlay-slider--carrusel-con-texto-superpuesto"><code>overlay-slider</code> — Carrusel con texto superpuesto
+  </h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"overlay-slider"</span>,
+  <span class="hljs-attr">"slides"</span>: [
+    {
+      <span class="hljs-attr">"src"</span>: <span class="hljs-string">"img/carpeta/imagen.jpg"</span>,
+      <span class="hljs-attr">"alt"</span>: <span class="hljs-string">"Texto alternativo"</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Título opcional del slide"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Descripción larga del slide"</span>
+    }
+  ]
+}
+</div></code></pre>
+  <h4 id="download--bot%C3%B3n-de-descarga"><code>download</code> — Botón de descarga</h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"download"</span>,
+  <span class="hljs-attr">"src"</span>: <span class="hljs-string">"otros/archivo.zip"</span>,
+  <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"nombre-de-descarga.zip"</span>
+}
+</div></code></pre>
+  <h4 id="youtube--video-de-youtube"><code>youtube</code> — Video de YouTube</h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"youtube"</span>,
+  <span class="hljs-attr">"src"</span>: <span class="hljs-string">"https://www.youtube.com/watch?v=VIDEO_ID"</span>
+}
+</div></code></pre>
+  <ul>
+    <li>Acepta formatos: <code>youtube.com/watch?v=</code>, <code>youtu.be/</code>, <code>youtube.com/embed/</code></li>
+  </ul>
+  <h4 id="statistics--estad%C3%ADsticas-dentro-de-un-acorde%C3%B3n"><code>statistics</code> — Estadísticas dentro de un
+    acordeón</h4>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"statistics"</span>,
+  <span class="hljs-attr">"statistics"</span>: [
+    {
+      <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"1 374 tCO₂e"</span>, <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Emisiones"</span> },
+      <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"1 374 tCO₂e"</span>, <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Emissions"</span> }
+    }
+  ]
+}
+</div></code></pre>
+  <h3 id="54-contenido-m%C3%BAltiple-en-un-acorde%C3%B3n">5.4 Contenido Múltiple en un Acordeón</h3>
+  <p>Un acordeón puede tener <strong>múltiples piezas de contenido</strong> usando un array:</p>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"huella-carbono"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Huella de Carbono"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Carbon Footprint"</span> },
+  <span class="hljs-attr">"content"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"pdf"</span>,
+      <span class="hljs-attr">"src"</span>: <span class="hljs-string">"pdfs/huella-ecologica.pdf"</span>
+    },
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"statistics"</span>,
+      <span class="hljs-attr">"statistics"</span>: [ ... ]
+    }
+  ]
+}
+</div></code></pre>
+  <hr>
+  <h2 id="6-c%C3%B3mo-agregar-nuevas-secciones">6. Cómo Agregar Nuevas Secciones</h2>
+  <h3 id="61-agregar-un-nuevo-acorde%C3%B3n-a-una-p%C3%A1gina-existente">6.1 Agregar un nuevo acordeón a una página
+    existente</h3>
+  <ol>
+    <li>Abrir el archivo JSON correspondiente en <code>contenido/</code></li>
+    <li>Agregar un nuevo objeto al array <code>blocks</code>:</li>
+  </ol>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"accordion"</span>,
+  <span class="hljs-attr">"sections"</span>: [
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"mi-nueva-seccion"</span>,
+      <span class="hljs-attr">"es"</span>: {
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Mi Nueva Sección"</span>
+      },
+      <span class="hljs-attr">"en"</span>: {
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"My New Section"</span>
+      },
+      <span class="hljs-attr">"content"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"pdf"</span>,
+        <span class="hljs-attr">"src"</span>: <span class="hljs-string">"pdfs/mi-carpeta/documento.pdf"</span>
+      },
+      <span class="hljs-attr">"children"</span>: []
+    }
+  ]
+}
+</div></code></pre>
+  <h3 id="62-agregar-un-sub-acorde%C3%B3n">6.2 Agregar un sub-acordeón</h3>
+  <p>Dentro de una sección existente, agregar al array <code>children</code>:</p>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"seccion-padre"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sección Padre"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Parent Section"</span> },
+  <span class="hljs-attr">"children"</span>: [
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"sub-seccion-nueva"</span>,
+      <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sub-sección"</span> },
+      <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sub-section"</span> },
+      <span class="hljs-attr">"content"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"slider"</span>,
+        <span class="hljs-attr">"images"</span>: [
+          { <span class="hljs-attr">"src"</span>: <span class="hljs-string">"img/nueva-img.jpg"</span>, <span class="hljs-attr">"alt"</span>: <span class="hljs-string">"Descripción"</span> }
+        ]
+      }
+    }
+  ]
+}
+</div></code></pre>
+  <h3 id="63-agregar-un-subt%C3%ADtulo-entre-bloques">6.3 Agregar un subtítulo entre bloques</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"subtitle"</span>,
+  <span class="hljs-attr">"es"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Nueva Categoría"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Descripción de esta categoría de contenido."</span>
+  },
+  <span class="hljs-attr">"en"</span>: {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"New Category"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Description of this content category."</span>
+  }
+}
+</div></code></pre>
+  <h3 id="64-agregar-una-nueva-p%C3%A1gina-completa">6.4 Agregar una nueva página completa</h3>
+  <ol>
+    <li><strong>Crear el HTML</strong> — Copiar cualquier página interior (ej. <code>gobernanza.html</code>) y cambiar
+      el <code>&lt;title&gt;</code></li>
+    <li><strong>Crear el JSON</strong> — Crear <code>contenido/nueva-pagina.json</code> con la estructura raíz</li>
+    <li><strong>Registrar en <code>pageContentMap</code></strong> — En <code>contenido.js</code>, agregar:
+      <pre class="hljs"><code><div><span class="hljs-string">'nueva-pagina.html'</span>: <span class="hljs-string">'nueva-pagina'</span>
+</div></code></pre>
+    </li>
+    <li><strong>Actualizar navegación</strong> — Agregar el enlace
+      <code>&lt;li&gt;&lt;a href=&quot;nueva-pagina.html&quot;&gt;Nueva Página&lt;/a&gt;&lt;/li&gt;</code> en
+      <strong>TODOS</strong> los archivos HTML
+    </li>
+    <li><strong>Actualizar traducciones</strong> — En <code>contenido/translations.json</code>, agregar la traducción
+      del nombre de la navegación en ambos idiomas:
+      <pre class="hljs"><code><div><span class="hljs-string">"nuevaPagina"</span>: <span class="hljs-string">"Nueva Página"</span>   <span class="hljs-comment">// en "es"</span>
+<span class="hljs-string">"nuevaPagina"</span>: <span class="hljs-string">"New Page"</span>       <span class="hljs-comment">// en "en"</span>
+</div></code></pre>
+    </li>
+    <li><strong>Actualizar <code>updateHeader()</code></strong> — En <code>contenido.js</code>, agregar el mapeo en
+      <code>navKeys</code>:
+      <pre class="hljs"><code><div><span class="hljs-string">'nueva-pagina.html'</span>: <span class="hljs-string">'nuevaPagina'</span>
+</div></code></pre>
+    </li>
+  </ol>
+  <hr>
+  <h2 id="7-sistema-de-traducci%C3%B3n-espa%C3%B1ol--ingl%C3%A9s">7. Sistema de Traducción (Español / Inglés)</h2>
+  <h3 id="71-flujo-de-traducci%C3%B3n">7.1 Flujo de Traducción</h3>
+  <pre class="hljs"><code><div>Usuario hace clic en &quot;EN/ES&quot;
+  └── setupLanguageToggle() → applyLanguage(newLang)
+        ├── localStorage.setItem('selectedLanguage', lang)
+        ├── updatePageMetadata(lang)   → título/subtítulo desde JSON de página
+        ├── updateHeader(lang)          → nav desde translations.json
+        ├── updateFooter(lang)          → footer desde translations.json
+        ├── updateLanguageButton(lang)  → cambia texto del botón
+        └── generateContentBlocks()    → regenera todo el contenido en el idioma
+</div></code></pre>
+  <h3 id="72-d%C3%B3nde-est%C3%A1n-los-textos-traducibles">7.2 Dónde están los textos traducibles</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Elemento</th>
+        <th>Fuente de traducción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Navegación del header</td>
+        <td><code>translations.json</code> → <code>common.header.nav</code></td>
+      </tr>
+      <tr>
+        <td>Textos del footer</td>
+        <td><code>translations.json</code> → <code>common.footer</code></td>
+      </tr>
+      <tr>
+        <td>Título/subtítulo de página</td>
+        <td><code>{pagina}.json</code> → <code>metadata.{lang}</code></td>
+      </tr>
+      <tr>
+        <td>Títulos de acordeones</td>
+        <td><code>{pagina}.json</code> → <code>blocks[].sections[].{lang}.title</code></td>
+      </tr>
+      <tr>
+        <td>Contenido de subtítulos</td>
+        <td><code>{pagina}.json</code> → <code>blocks[].{lang}.title/description/list</code></td>
+      </tr>
+      <tr>
+        <td>Etiquetas nav del index</td>
+        <td><code>translations.json</code> → <code>index.navItems</code></td>
+      </tr>
+      <tr>
+        <td>Título hero del index</td>
+        <td><code>translations.json</code> → <code>index.headerSection</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="73-persistencia-del-idioma">7.3 Persistencia del Idioma</h3>
+  <ul>
+    <li>Se guarda en <code>localStorage</code> con la clave <code>'selectedLanguage'</code></li>
+    <li>Al cargar cualquier página, se restaura automáticamente el idioma guardado</li>
+    <li>El valor por defecto es <code>'es'</code> (español)</li>
+  </ul>
+  <hr>
+  <h2 id="8-restricciones-y-limitaciones">8. Restricciones y Limitaciones</h2>
+  <h3 id="81-restricciones-t%C3%A9cnicas">8.1 Restricciones Técnicas</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Restricción</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sin backend</strong></td>
+        <td>El sitio es completamente estático. Los JSON se cargan vía <code>fetch()</code> desde el mismo servidor.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>CORS en local</strong></td>
+        <td>Abrir los archivos HTML directamente en el navegador (<code>file://</code>) causará errores de CORS al
+          cargar los JSON. Se necesita un servidor local (ej. Live Server en VS Code).</td>
+      </tr>
+      <tr>
+        <td><strong>Nombres de archivos con espacios</strong></td>
+        <td>Varios PDFs tienen espacios en el nombre. Funcionan, pero es mejor evitarlos en archivos nuevos.</td>
+      </tr>
+      <tr>
+        <td><strong>IDs únicos</strong></td>
+        <td>Los <code>id</code> de las secciones <strong>deben ser únicos</strong> dentro de cada JSON. IDs duplicados
+          causarán conflictos en la navegación por hash y en la restauración del estado de acordeones.</td>
+      </tr>
+      <tr>
+        <td><strong>Sin validación de JSON</strong></td>
+        <td>No hay validación del esquema JSON. Un JSON malformado dejará la página vacía sin error visible para el
+          usuario.</td>
+      </tr>
+      <tr>
+        <td><strong>PDFs protegidos por navegador</strong></td>
+        <td>El visor PDF (<code>&lt;embed&gt;</code>) depende del navegador. En algunos navegadores móviles los PDFs no
+          se renderizan inline.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="82-restricciones-de-contenido">8.2 Restricciones de Contenido</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Restricción</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Solo 2 idiomas</strong></td>
+        <td>El sistema solo soporta <code>es</code> y <code>en</code>. Agregar un tercer idioma requiere modificar
+          <code>contenido.js</code>.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Título <code>&lt;title&gt;</code> no se traduce</strong></td>
+        <td>El tag <code>&lt;title&gt;</code> de cada HTML está hardcodeado y no cambia con el idioma.</td>
+      </tr>
+      <tr>
+        <td><strong>Videos solo de YouTube</strong></td>
+        <td>El type <code>youtube</code> solo soporta videos de YouTube. No hay soporte para Vimeo u otras plataformas.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Sin búsqueda</strong></td>
+        <td>Aunque el CSS define estilos para <code>.page-search-box</code>, no hay funcionalidad de búsqueda
+          implementada.</td>
+      </tr>
+      <tr>
+        <td><strong>Sin lazy loading</strong></td>
+        <td>Todas las imágenes y videos se cargan al abrir la sección, sin carga diferida.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="83-restricciones-de-los-archivos-json">8.3 Restricciones de los Archivos JSON</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Regla</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cada bloque debe tener <code>type</code></td>
+        <td>Sin <code>type</code>, el bloque se ignora silenciosamente</td>
+      </tr>
+      <tr>
+        <td>Los acordeones necesitan <code>id</code></td>
+        <td>Sin <code>id</code>, el hash de URL y la restauración de estado no funcionarán</td>
+      </tr>
+      <tr>
+        <td>Los títulos requieren <code>es</code> Y <code>en</code></td>
+        <td>Si falta un idioma, se muestra string vacío (<code>''</code>)</td>
+      </tr>
+      <tr>
+        <td>Las rutas de archivos son relativas</td>
+        <td>Las rutas de <code>src</code> deben ser relativas a la raíz del proyecto</td>
+      </tr>
+      <tr>
+        <td>JSON debe ser válido</td>
+        <td>Comas finales, comillas faltantes o sintaxis incorrecta romperán toda la página</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2 id="9-consejos-de-uso">9. Consejos de Uso</h2>
+  <h3 id="91-desarrollo-local">9.1 Desarrollo Local</h3>
+  <pre class="hljs"><code><div><span class="hljs-comment"># Opción 1: Live Server en VS Code</span>
+<span class="hljs-comment"># Instalar extensión "Live Server" → clic derecho en index.html → "Open with Live Server"</span>
+
+<span class="hljs-comment"># Opción 2: Python</span>
+<span class="hljs-built_in">cd</span> ranking-QS
+python -m http.server 8000
+<span class="hljs-comment"># Abrir http://localhost:8000</span>
+
+<span class="hljs-comment"># Opción 3: Node.js</span>
+npx serve .
+</div></code></pre>
+  <h3 id="92-debugging">9.2 Debugging</h3>
+  <ul>
+    <li><strong>JSON inválido:</strong> Abrir la consola del navegador (F12). Buscar errores de <code>fetch()</code> o
+      <code>JSON.parse</code>.
+    </li>
+    <li><strong>Acordeón no aparece:</strong> Verificar que el <code>type</code> sea exactamente
+      <code>&quot;accordion&quot;</code> y que <code>sections</code> sea un array.
+    </li>
+    <li><strong>PDF no carga:</strong> Verificar que la ruta en <code>src</code> sea correcta y que el archivo exista.
+      Probar abriendo la ruta directamente en el navegador.</li>
+    <li><strong>Traducciones no funcionan:</strong> Verificar que las claves <code>es</code> y <code>en</code> existan
+      en el JSON.</li>
+    <li><strong>Hash navigation:</strong> Agregar <code>#id-de-seccion</code> a la URL para navegar directamente a un
+      acordeón.</li>
+  </ul>
+  <h3 id="93-buenas-pr%C3%A1cticas-para-nuevos-contenidos">9.3 Buenas Prácticas para Nuevos Contenidos</h3>
+  <ol>
+    <li><strong>Nombrar IDs con kebab-case:</strong> <code>&quot;id&quot;: &quot;mi-nueva-seccion&quot;</code>
+      (minúsculas, guiones).</li>
+    <li><strong>Siempre incluir ambos idiomas</strong> (<code>es</code> y <code>en</code>) aunque sea placeholder.</li>
+    <li><strong>Nombres de archivos sin espacios ni caracteres especiales</strong> para PDFs e imágenes nuevas.</li>
+    <li><strong>Validar JSON</strong> antes de subir — usar https://jsonlint.com/ o la extensión de VS Code.</li>
+    <li><strong>Comprimir imágenes</strong> antes de agregarlas. Preferir formatos <code>.webp</code> o
+      <code>.jpeg</code> sobre <code>.png</code> para fotografías.
+    </li>
+    <li><strong>No crear archivos de video mayores a 50 MB</strong> sin convertirlos a formato web optimizado.</li>
+  </ol>
+  <h3 id="94-convenciones-de-nombres">9.4 Convenciones de Nombres</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Formato</th>
+        <th>Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Archivos HTML</td>
+        <td><code>kebab-case.html</code></td>
+        <td><code>impacto-ambiental.html</code></td>
+      </tr>
+      <tr>
+        <td>Archivos JSON</td>
+        <td>Mismo nombre que el HTML</td>
+        <td><code>impacto-ambiental.json</code></td>
+      </tr>
+      <tr>
+        <td>IDs de sección</td>
+        <td><code>kebab-case</code></td>
+        <td><code>&quot;politica-accion-sostenible&quot;</code></td>
+      </tr>
+      <tr>
+        <td>Carpetas de imágenes</td>
+        <td><code>kebab-case</code></td>
+        <td><code>img/impacto-ambiental/</code></td>
+      </tr>
+      <tr>
+        <td>Carpetas de PDFs</td>
+        <td><code>PascalCase</code> o descripción</td>
+        <td><code>pdfs/Gobernanza/</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2 id="10-gu%C3%ADa-para-modificaciones-futuras">10. Guía para Modificaciones Futuras</h2>
+  <h3 id="101-agregar-un-nuevo-tipo-de-contenido">10.1 Agregar un Nuevo Tipo de Contenido</h3>
+  <p>Para agregar un nuevo tipo (ej. <code>&quot;video-local&quot;</code>, <code>&quot;table&quot;</code>,
+    <code>&quot;gallery&quot;</code>):
+  </p>
+  <ol>
+    <li>
+      <p><strong>En <code>contenido.js</code></strong> — Agregar un nuevo <code>case</code> en
+        <code>renderContent()</code>:
+      </p>
+      <pre class="hljs"><code><div><span class="hljs-keyword">case</span> <span class="hljs-string">'mi-nuevo-tipo'</span>:
+  <span class="hljs-keyword">return</span> createMiNuevoTipoElement(content.propiedad);
+</div></code></pre>
+    </li>
+    <li>
+      <p><strong>Crear la función de creación:</strong></p>
+      <pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMiNuevoTipoElement</span>(<span class="hljs-params">propiedad</span>) </span>{
+  <span class="hljs-keyword">const</span> container = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+  container.className = <span class="hljs-string">'mi-nuevo-tipo-container'</span>;
+  <span class="hljs-comment">// ... construir el DOM ...</span>
+  <span class="hljs-keyword">return</span> container;
+}
+</div></code></pre>
+    </li>
+    <li>
+      <p><strong>En <code>style.css</code></strong> — Agregar los estilos para <code>.mi-nuevo-tipo-container</code></p>
+    </li>
+    <li>
+      <p><strong>Usarlo en JSON:</strong></p>
+      <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"mi-nuevo-tipo"</span>,
+  <span class="hljs-attr">"propiedad"</span>: <span class="hljs-string">"valor"</span>
+}
+</div></code></pre>
+    </li>
+  </ol>
+  <h3 id="102-agregar-un-tercer-idioma">10.2 Agregar un Tercer Idioma</h3>
+  <ol>
+    <li><strong>En <code>translations.json</code></strong> — Agregar una nueva clave raíz (ej.
+      <code>&quot;pt&quot;</code> para portugués)
+    </li>
+    <li><strong>En cada JSON de contenido</strong> — Agregar <code>&quot;pt&quot;</code> junto a
+      <code>&quot;es&quot;</code> y <code>&quot;en&quot;</code> en cada objeto traducible
+    </li>
+    <li><strong>En <code>contenido.js</code>:</strong>
+      <ul>
+        <li>Modificar <code>setupLanguageToggle()</code> para rotar entre 3 idiomas</li>
+        <li>Modificar <code>updateLanguageButton()</code> para mostrar el siguiente idioma</li>
+      </ul>
+    </li>
+    <li><strong>En los HTML</strong> — Considerar reemplazar el botón simple por un selector dropdown</li>
+  </ol>
+  <h3 id="103-cambiar-el-header-o-footer">10.3 Cambiar el Header o Footer</h3>
+  <p>El header y footer están <strong>hardcodeados en HTML pero traducidos vía JS</strong>:</p>
+  <ul>
+    <li><strong>Para cambiar la estructura visual:</strong> Editar el HTML en <strong>todos</strong> los archivos</li>
+    <li><strong>Para cambiar textos traducibles:</strong> Editar <code>contenido/translations.json</code></li>
+    <li><strong>Para cambiar redes sociales:</strong> Editar las URLs directamente en los archivos HTML (están
+      hardcodeadas en cada archivo)</li>
+  </ul>
+  <h3 id="104-cambiar-el-estilo-visual">10.4 Cambiar el Estilo Visual</h3>
+  <p>El estilo está centralizado en <code>style.css</code> con variables CSS:</p>
+  <pre class="hljs"><code><div><span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attribute">--accent</span>: <span class="hljs-number">#E0A32F</span>;       <span class="hljs-comment">/* Dorado institucional */</span>
+  <span class="hljs-attribute">--primary-dark</span>: <span class="hljs-number">#3A3A3A</span>; <span class="hljs-comment">/* Texto oscuro */</span>
+  <span class="hljs-attribute">--footer-bg</span>: <span class="hljs-number">#17243d</span>;    <span class="hljs-comment">/* Azul oscuro del footer */</span>
+  <span class="hljs-attribute">--text-white</span>: <span class="hljs-number">#ffffff</span>;
+  <span class="hljs-attribute">--text-grey</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0.6</span>);
+}
+</div></code></pre>
+  <p>Cambiar estas variables afecta todo el sitio globalmente.</p>
+  <h3 id="105-men%C3%BA-hamburguesa-responsive">10.5 Menú Hamburguesa Responsive</h3>
+  <p>El menú hamburguesa ya está implementado. Ver <a href="#12-men%C3%BA-hamburguesa-responsive">Sección 12</a> para la
+    documentación completa.</p>
+  <p>Media queries relevantes en <code>style.css</code>:</p>
+  <ul>
+    <li><code>@media (max-width: 767px)</code> — Activa el menú hamburguesa y oculta la barra horizontal</li>
+    <li><code>@media (max-width: 768px)</code> — Ajusta el grid de iconos de navegación del index y el video hero</li>
+  </ul>
+  <hr>
+  <h2 id="11-referencia-r%C3%A1pida-de-tipos-de-contenido">11. Referencia Rápida de Tipos de Contenido</h2>
+  <h3 id="plantilla-secci%C3%B3n-con-pdf">Plantilla: Sección con PDF</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"nombre-seccion"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Título"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title"</span> },
+  <span class="hljs-attr">"content"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"pdf"</span>,
+    <span class="hljs-attr">"src"</span>: <span class="hljs-string">"pdfs/carpeta/archivo.pdf"</span>
+  }
+}
+</div></code></pre>
+  <h3 id="plantilla-secci%C3%B3n-con-galer%C3%ADa-de-im%C3%A1genes">Plantilla: Sección con Galería de Imágenes</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"galeria"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Galería"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Gallery"</span> },
+  <span class="hljs-attr">"content"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"slider"</span>,
+    <span class="hljs-attr">"images"</span>: [
+      { <span class="hljs-attr">"src"</span>: <span class="hljs-string">"img/carpeta/1.jpg"</span>, <span class="hljs-attr">"alt"</span>: <span class="hljs-string">"Foto 1"</span> },
+      { <span class="hljs-attr">"src"</span>: <span class="hljs-string">"img/carpeta/2.jpg"</span>, <span class="hljs-attr">"alt"</span>: <span class="hljs-string">"Foto 2"</span> }
+    ]
+  }
+}
+</div></code></pre>
+  <h3 id="plantilla-secci%C3%B3n-con-video-youtube">Plantilla: Sección con Video YouTube</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"video"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Video"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Video"</span> },
+  <span class="hljs-attr">"content"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"youtube"</span>,
+    <span class="hljs-attr">"src"</span>: <span class="hljs-string">"https://www.youtube.com/watch?v=VIDEO_ID"</span>
+  }
+}
+</div></code></pre>
+  <h3 id="plantilla-secci%C3%B3n-con-enlace-externo">Plantilla: Sección con Enlace Externo</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"sitio-externo"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sitio Externo"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"External Site"</span> },
+  <span class="hljs-attr">"content"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"link"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://www.ejemplo.com"</span>,
+    <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Visitar Sitio"</span>
+  }
+}
+</div></code></pre>
+  <h3 id="plantilla-secci%C3%B3n-con-descarga">Plantilla: Sección con Descarga</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"descarga"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Descarga"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Download"</span> },
+  <span class="hljs-attr">"content"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"download"</span>,
+    <span class="hljs-attr">"src"</span>: <span class="hljs-string">"otros/archivo.zip"</span>,
+    <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"mi-archivo.zip"</span>
+  }
+}
+</div></code></pre>
+  <h3 id="plantilla-acorde%C3%B3n-con-sub-acordeones">Plantilla: Acordeón con Sub-acordeones</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"padre"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sección Padre"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Parent Section"</span> },
+  <span class="hljs-attr">"children"</span>: [
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"hijo-1"</span>,
+      <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sub-sección 1"</span> },
+      <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sub-section 1"</span> },
+      <span class="hljs-attr">"content"</span>: { <span class="hljs-attr">"type"</span>: <span class="hljs-string">"pdf"</span>, <span class="hljs-attr">"src"</span>: <span class="hljs-string">"pdfs/doc1.pdf"</span> }
+    },
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"hijo-2"</span>,
+      <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sub-sección 2"</span> },
+      <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Sub-section 2"</span> },
+      <span class="hljs-attr">"content"</span>: { <span class="hljs-attr">"type"</span>: <span class="hljs-string">"pdf"</span>, <span class="hljs-attr">"src"</span>: <span class="hljs-string">"pdfs/doc2.pdf"</span> }
+    }
+  ]
+}
+</div></code></pre>
+  <h3 id="plantilla-overlay-slider-im%C3%A1genes-con-texto">Plantilla: Overlay Slider (Imágenes con Texto)</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"historia"</span>,
+  <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Historia"</span> },
+  <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"title"</span>: <span class="hljs-string">"History"</span> },
+  <span class="hljs-attr">"content"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"overlay-slider"</span>,
+    <span class="hljs-attr">"slides"</span>: [
+      {
+        <span class="hljs-attr">"src"</span>: <span class="hljs-string">"img/carpeta/foto.jpg"</span>,
+        <span class="hljs-attr">"alt"</span>: <span class="hljs-string">"Descripción accesible"</span>,
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Título del slide"</span>,
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Texto largo que aparece sobre la imagen..."</span>
+      }
+    ]
+  }
+}
+</div></code></pre>
+  <h3 id="plantilla-bloque-de-estad%C3%ADsticas">Plantilla: Bloque de Estadísticas</h3>
+  <pre class="hljs"><code><div>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"statistics"</span>,
+  <span class="hljs-attr">"statistics"</span>: [
+    {
+      <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"1,200"</span>, <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Estudiantes activos"</span> },
+      <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"1,200"</span>, <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Active students"</span> }
+    },
+    {
+      <span class="hljs-attr">"es"</span>: { <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"95%"</span>, <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Tasa de graduación"</span> },
+      <span class="hljs-attr">"en"</span>: { <span class="hljs-attr">"dato"</span>: <span class="hljs-string">"95%"</span>, <span class="hljs-attr">"titulo"</span>: <span class="hljs-string">"Graduation rate"</span> }
+    }
+  ]
+}
+</div></code></pre>
+  <hr>
+  <h2 id="12-men%C3%BA-hamburguesa-responsive">12. Menú Hamburguesa Responsive</h2>
+  <blockquote>
+    <p><strong>Implementado en:</strong> Junio 2026<br>
+      <strong>Breakpoint:</strong> <code>&lt; 768px</code> (pantallas móviles)
+    </p>
+  </blockquote>
+  <h3 id="121-elementos-html-a%C3%B1adidos">12.1 Elementos HTML añadidos</h3>
+  <p>Se agregaron tres elementos a <strong>todos</strong> los archivos HTML del proyecto:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Elemento</th>
+        <th>ID</th>
+        <th>Clase</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;div&gt;</code></td>
+        <td><code>nav-backdrop</code></td>
+        <td><code>nav-backdrop</code></td>
+        <td>Backdrop semitransparente para cerrar al clic externo</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button&gt;</code> (dentro del <code>&lt;nav&gt;</code>)</td>
+        <td><code>nav-close-btn</code></td>
+        <td><code>nav-close-btn</code></td>
+        <td>Botón ✕ dentro del panel lateral</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button&gt;</code> (en el header)</td>
+        <td><code>hamburger-btn</code></td>
+        <td><code>hamburger-btn</code></td>
+        <td>Botón de 3 líneas que abre el menú</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>El <code>&lt;nav&gt;</code> también recibió el atributo <code>id=&quot;page-nav-menu&quot;</code> para vincularlo
+    con <code>aria-controls</code> del botón hamburguesa.</p>
+  <h3 id="122-comportamiento-desktop-%E2%89%A5-768px">12.2 Comportamiento Desktop (≥ 768px)</h3>
+  <ul>
+    <li>El botón hamburguesa tiene <code>display: none</code> — no es visible</li>
+    <li>El botón cerrar tiene <code>display: none</code> — no es visible</li>
+    <li>El backdrop tiene <code>display: none</code> — no existe en el layout</li>
+    <li>La navegación se muestra como barra horizontal normal (<code>display: flex</code>)</li>
+  </ul>
+  <h3 id="123-comportamiento-m%C3%B3vil--768px">12.3 Comportamiento Móvil (&lt; 768px)</h3>
+  <ul>
+    <li>La barra horizontal desaparece del flujo</li>
+    <li>El botón hamburguesa aparece a la derecha del header</li>
+    <li>Al hacer clic en hamburguesa → el panel lateral se desliza desde la derecha</li>
+    <li>El panel es <code>position: fixed</code>, <code>z-index: 300</code> → <strong>flota sobre el contenido</strong>,
+      no lo desplaza</li>
+    <li>El backdrop cubre toda la pantalla con <code>z-index: 299</code>, opacidad 50%</li>
+  </ul>
+  <h3 id="124-clases-css-de-estado">12.4 Clases CSS de estado</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Clase</th>
+        <th>Elemento</th>
+        <th>Efecto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.show-menu</code></td>
+        <td><code>#page-nav-menu</code></td>
+        <td><code>transform: translateX(0)</code> — panel visible</td>
+      </tr>
+      <tr>
+        <td><code>.is-active</code></td>
+        <td><code>#hamburger-btn</code></td>
+        <td>Animación de 3 líneas → ✕</td>
+      </tr>
+      <tr>
+        <td><code>.is-visible</code></td>
+        <td><code>#nav-backdrop</code></td>
+        <td><code>opacity: 1</code> + <code>pointer-events: auto</code></td>
+      </tr>
+      <tr>
+        <td><code>.nav-open</code></td>
+        <td><code>&lt;body&gt;</code></td>
+        <td><code>overflow: hidden</code> — bloquea el scroll</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="125-transici%C3%B3n-y-animaci%C3%B3n">12.5 Transición y Animación</h3>
+  <pre class="hljs"><code><div><span class="hljs-comment">/* Panel: deslizamiento lateral */</span>
+<span class="hljs-selector-class">.page-nav</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">100%</span>);  <span class="hljs-comment">/* Oculto por defecto */</span>
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">0.35s</span> <span class="hljs-built_in">cubic-bezier</span>(<span class="hljs-number">0.4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">1</span>);
+}
+<span class="hljs-selector-class">.page-nav</span><span class="hljs-selector-class">.show-menu</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">0</span>);
+}
+
+<span class="hljs-comment">/* Backdrop: fade */</span>
+<span class="hljs-selector-class">.nav-backdrop</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.3s</span> ease;
+}
+<span class="hljs-selector-class">.nav-backdrop</span><span class="hljs-selector-class">.is-visible</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-comment">/* Hamburguesa → X */</span>
+<span class="hljs-selector-class">.hamburger-btn</span><span class="hljs-selector-class">.is-active</span> <span class="hljs-selector-class">.hamburger-line</span><span class="hljs-selector-pseudo">:nth-child(1)</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+}
+<span class="hljs-selector-class">.hamburger-btn</span><span class="hljs-selector-class">.is-active</span> <span class="hljs-selector-class">.hamburger-line</span><span class="hljs-selector-pseudo">:nth-child(2)</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-class">.hamburger-btn</span><span class="hljs-selector-class">.is-active</span> <span class="hljs-selector-class">.hamburger-line</span><span class="hljs-selector-pseudo">:nth-child(3)</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">45deg</span>);
+}
+</div></code></pre>
+  <h3 id="126-ajustes-responsive-adicionales-en-indexhtml">12.6 Ajustes Responsive adicionales en
+    <code>index.html</code>
+  </h3>
+  <h4 id="video-hero-con-fuente-responsive">Video hero con fuente responsive</h4>
+  <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hero-img"</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">loop</span> <span class="hljs-attr">muted</span> <span class="hljs-attr">playsinline</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Fuente ligera para móvil (carga prioritaria en pantallas ≤ 768px) --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/videoweb.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 768px)"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Fuente para desktop --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/videoweb3.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+</div></code></pre>
+  <ul>
+    <li>Se añadió el atributo <code>playsinline</code> para reproducción inline en iOS.</li>
+    <li>Se agregó una fuente adicional <code>videoweb.mp4</code> como fuente ligera para móvil.</li>
+  </ul>
+  <h4 id="grid-de-iconos-de-navegaci%C3%B3n">Grid de iconos de navegación</h4>
+  <pre class="hljs"><code><div><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">768px</span>) {
+  <span class="hljs-comment">/* Dos columnas en lugar de fila única */</span>
+  <span class="hljs-selector-class">.nav-item</span> { <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">50%</span> - <span class="hljs-number">10px</span>); }
+
+  <span class="hljs-comment">/* Círculos y SVG más pequeños */</span>
+  <span class="hljs-selector-class">.circle-icon</span> { <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>; <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>; }
+  <span class="hljs-selector-class">.circle-icon</span> <span class="hljs-selector-tag">svg</span> { <span class="hljs-attribute">width</span>: <span class="hljs-number">60px</span>; <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>; }
+
+  <span class="hljs-comment">/* Video hero con aspect-ratio en lugar de altura fija */</span>
+  <span class="hljs-selector-class">.hero-img</span> { <span class="hljs-attribute">height</span>: auto; <span class="hljs-attribute">aspect-ratio</span>: <span class="hljs-number">9</span> / <span class="hljs-number">5</span>; }
+}
+</div></code></pre>
+  <h3 id="127-consideraciones-al-agregar-p%C3%A1ginas-nuevas">12.7 Consideraciones al Agregar Páginas Nuevas</h3>
+  <p>Al crear una nueva página interior, copiar el bloque completo del header incluyendo los tres nuevos elementos:</p>
+  <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Backdrop para cerrar el menú móvil al hacer clic fuera --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-backdrop"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nav-backdrop"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-top-bar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-header"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-header-container"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-logo"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-nav"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"page-nav-menu"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Botón cerrar (solo móvil) --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-close-btn"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nav-close-btn"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Cerrar menú"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>...enlaces...<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"language-toggle"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"language-toggle-btn"</span>&gt;</span>EN<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+      <span class="hljs-comment">&lt;!-- Botón Hamburguesa (solo móvil) --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-btn"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hamburger-btn"</span>
+        <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Abrir menú"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"page-nav-menu"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hamburger-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</div></code></pre>
+  <p>El JS se inicializa automáticamente vía <code>setupMobileMenu()</code> que ya es llamada por
+    <code>initializeContent()</code>. No se requiere código adicional.
+  </p>
+  <pre class="hljs"><code><div><span class="hljs-selector-tag">body</span><span class="hljs-selector-class">.nav-open</span> <span class="hljs-selector-class">.page-header</span> {
+  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">310</span>; <span class="hljs-comment">/* Por encima del backdrop (z-index: 299) */</span>
+}
+</div></code></pre>
+  </li>
+  </ul>
+  <hr>
+
+</body>
+
+</html>
