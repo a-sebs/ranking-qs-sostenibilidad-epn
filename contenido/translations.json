@@ -1,0 +1,94 @@
+{
+  "es": {
+    "common": {
+      "header": {
+        "nav": {
+          "inicio": "Inicio",
+          "informeAnual": "Informe Anual",
+          "impactoAmbiental": "Impacto Ambiental",
+          "impactoSocial": "Impacto Social",
+          "gobernanza": "Gobernanza",
+          "informacionAdicional": "Información Adicional"
+        },
+        "languageToggle": "EN"
+      },
+      "footer": {
+        "descripcion": "Comprometidos con el desarrollo sostenible y la responsabilidad social en el ámbito académico e institucional.",
+        "contacto": "Contacto",
+        "informacion": "Información",
+        "direccion": "Av. Ladrón de Guevara E11-253 ",
+        "telefono": "(+593) 2 2976 300",
+        "horario":"",
+        "email": "info@epn.edu.ec",
+        "links": {
+          "politicaSostenibilidad": "Política de Sostenibilidad",
+          "planEstrategico": "Plan Estratégico 2024–2030",
+          "odsAgenda": "ODS & Agenda 2030",
+          "transparencia": "Transparencia Institucional",
+          "avisoLegal": "Aviso Legal"
+        },
+        "institucion": "ESCUELA POLITÉCNICA NACIONAL",
+        "informe": "INFORME DE SOSTENIBILIDAD"
+      }
+    },
+    "index": {
+      "headerSection": {
+        "h1": "VIDA POLITÉCNICA",
+        "span": "SOSTENIBLE"
+      },
+      "navItems": {
+        "informeAnual": "INFORME ANUAL",
+        "impactoAmbiental": "IMPACTO AMBIENTAL",
+        "impactoSocial": "IMPACTO SOCIAL",
+        "gobernanza": "GOBERNANZA",
+        "informacionAdicional": "INFORMACIÓN ADICIONAL"
+      }
+    }
+  },
+  "en": {
+    "common": {
+      "header": {
+        "nav": {
+          "inicio": "Home",
+          "informeAnual": "Annual Report",
+          "impactoAmbiental": "Environmental Impact",
+          "impactoSocial": "Social Impact",
+          "gobernanza": "Governance",
+          "informacionAdicional": "Additional Information"
+        },
+        "languageToggle": "ES"
+      },
+      "footer": {
+        "descripcion": "Committed to sustainable development and social responsibility in the academic and institutional sphere.",
+        "contacto": "Contact",
+        "informacion": "Information",
+        "direccion": "Av. Ladrón de Guevara E11-253 ",
+        "telefono": "(+593) 2 2976 300",
+        "horario":"",
+        "email": "info@epn.edu.ec",
+        "links": {
+          "politicaSostenibilidad": "Sustainability Policy",
+          "planEstrategico": "Strategic Plan 2024–2030",
+          "odsAgenda": "SDGs & 2030 Agenda",
+          "transparencia": "Institutional Transparency",
+          "avisoLegal": "Legal Notice"
+        },
+        "institucion": "NATIONAL POLYTECHNIC SCHOOL",
+        "informe": "SUSTAINABILITY REPORT"
+      }
+    },
+    "index": {
+      "headerSection": {
+        "h1": "POLYTECHNIC LIFE",
+        "span": "SUSTAINABLE"
+      },
+      "navItems": {
+        "informeAnual": "ANNUAL REPORT",
+        "impactoAmbiental": "ENVIRONMENTAL IMPACT",
+        "impactoSocial": "SOCIAL IMPACT",
+        "gobernanza": "GOVERNANCE",
+        "informacionAdicional": "ADDITIONAL INFORMATION"
+      }
+    }
+  }
+}

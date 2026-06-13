@@ -1,0 +1,472 @@
+{
+  "metadata": {
+    "es": {
+      "pageTitle": "Impacto Social"
+    },
+    "en": {
+      "pageTitle": "Social Impact"
+    }
+  },
+  "blocks": [
+    {
+      "type": "subtitle",
+      "es": {
+        "title": "Igualdad"
+      },
+      "en": {
+        "title": "Equality"
+      }
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "politica-main",
+          "es": {
+            "title": "Política",
+            "description": "¿Tiene su institución una política actual de Igualdad, Diversidad e Inclusión (EDI)?"
+          },
+          "en": {
+            "title": "Policy",
+            "description": "Does your institution have an current policy on Equality, Diversity and Inclusion (EDI)?"
+          },
+          "children": [
+            {
+              "id": "plan-igualdad",
+              "es": {
+                "title": "Plan de Igualdad"
+              },
+              "en": {
+                "title": "Equality Plan"
+              },
+              "content": {
+                "type": "slider",
+                "images": [
+                  {
+                    "src": "img/impacto-social/1.jpg",
+                    "alt": "plan de igualdad 1"
+                  },
+                  {
+                    "src": "img/impacto-social/2.jpg",
+                    "alt": "plan de igualdad 2"
+                  },
+                  {
+                    "src": "img/impacto-social/3.jpg",
+                    "alt": "plan de igualdad 3"
+                  },
+                  {
+                    "src": "img/impacto-social/4.jpg",
+                    "alt": "plan de igualdad 4"
+                  },
+                  {
+                    "src": "img/impacto-social/5.jpg",
+                    "alt": "plan de igualdad 5"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "documento-plan-igualdad",
+              "es": {
+                "title": "Documento Plan de Igualdad"
+              },
+              "en": {
+                "title": "Equality Plan Document"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/impacto-social/19.-plan_igualdad2024-2026.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "servicios-apoyo-main",
+          "es": {
+            "title": "Servicios de Apoyo",
+            "description": "¿La Escuela Politécnica Nacional ofrece servicios de apoyo para personas con discapacidad?"
+          },
+          "en": {
+            "title": "Support Services",
+            "description": "Does the National Polytechnic School offer support services for persons with disabilities?"
+          },
+          "children": [
+            {
+              "id": "oficina-apoyo-discapacidad",
+              "es": {
+                "title": "Oficina de Apoyo a la Existencia de Discapacidad"
+              },
+              "en": {
+                "title": "Office for Support to the Existence of Disability"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/impacto-social/20.-Informe Necesidades Educativas Especiales-signed-signed (1)-signed (2).pdf"
+              }
+            },
+            {
+              "id": "acceso-campus-discapacidad",
+              "es": {
+                "title": "Acceso al Campus para Personas con Discapacidad"
+              },
+              "en": {
+                "title": "Campus Access for Persons with Disabilities"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/impacto-social/Apoyo a la Existencia de Discapacidad/Social Impact - Equality - Mapa de rutas EPN.pdf"
+              }
+            },
+            {
+              "id": "planes-acceso-discapacidad",
+              "es": {
+                "title": "Planes de acceso para personas con discapacidad"
+              },
+              "en": {
+                "title": "Access Plans for Persons with Disabilities"
+              },
+              "children": [
+                {
+                  "id": "plan-estrategico-desarrollo",
+                  "es": {
+                    "title": "Plan Estratégico de Desarrollo Institucional"
+                  },
+                  "en": {
+                    "title": "Institutional Development Strategic Plan"
+                  },
+                  "children": [
+                    {
+                      "id": "documento-pedi",
+                      "es": {
+                        "title": "Documento PEDI"
+                      },
+                      "en": {
+                        "title": "PEDI Document"
+                      },
+                      "content": {
+                        "type": "pdf",
+                        "src": "pdfs/Gobernanza/PEDI/PEDI.pdf"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "como-lo-construimos",
+                      "es": {
+                        "title": "¿Cómo lo construimos?"
+                      },
+                      "en": {
+                        "title": "How did we build it?"
+                      },
+                      "content": {
+                        "type": "slider",
+                        "images": [
+                          {
+                            "src": "img/gobernanza/pedi.webp",
+                            "alt": "PEDI Construction"
+                          }
+                        ]
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "videos-pedi",
+                      "es": {
+                        "title": "Videos"
+                      },
+                      "en": {
+                        "title": "Videos"
+                      },
+                      "children": [
+                        {
+                          "id": "video-pedi-1",
+                          "es": {
+                            "title": "Video: Introducción al PEDI"
+                          },
+                          "en": {
+                            "title": "Video: Introduction to PEDI"
+                          },
+                          "content": {
+                            "type": "youtube",
+                            "src": "https://www.youtube.com/watch?v=vcn1uBChwdQ&t=4s"
+                          },
+                          "children": []
+                        },
+                        {
+                          "id": "video-pedi-2",
+                          "es": {
+                            "title": "Video: Implementación del PEDI"
+                          },
+                          "en": {
+                            "title": "Video: PEDI Implementation"
+                          },
+                          "content": {
+                            "type": "youtube",
+                            "src": "https://www.youtube.com/watch?v=iv035xw6wDs&t=2s"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "galeria-pedi",
+                      "es": {
+                        "title": "Galería"
+                      },
+                      "en": {
+                        "title": "Gallery"
+                      },
+                      "content": {
+                        "type": "slider",
+                        "images": [
+                          {
+                            "src": "img/gobernanza/PEDI/1.jpg",
+                            "alt": "PEDI 1"
+                          },
+                          {
+                            "src": "img/gobernanza/PEDI/2.webp",
+                            "alt": "PEDI 2"
+                          },
+                          {
+                            "src": "img/gobernanza/PEDI/3.jpg",
+                            "alt": "PEDI 3"
+                          },
+                          {
+                            "src": "img/gobernanza/PEDI/4.webp",
+                            "alt": "PEDI 4"
+                          },
+                          {
+                            "src": "img/gobernanza/PEDI/5.webp",
+                            "alt": "PEDI 5"
+                          },
+                          {
+                            "src": "img/gobernanza/PEDI/6.jpeg",
+                            "alt": "PEDI 6"
+                          },
+                          {
+                            "src": "img/gobernanza/PEDI/7.webp",
+                            "alt": "PEDI 7"
+                          },
+                          {
+                            "src": "img/gobernanza/PEDI/8.png",
+                            "alt": "PEDI 8"
+                          }
+                        ]
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "plan-igualdad",
+                  "es": {
+                    "title": "Plan de Igualdad"
+                  },
+                  "en": {
+                    "title": "NEE Action Plan"
+                  },
+                  "content": {
+                    "type": "pdf",
+                    "src": "pdfs/impacto-social/19.-plan_igualdad2024-2026.pdf"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "plan-accion",
+                  "es": {
+                    "title": "Plan de Acción"
+                  },
+                  "en": {
+                    "title": "Action Plan"
+                  },
+                  "content": {
+                    "type": "pdf",
+                    "src": "pdfs/impacto-social/22 Y 24.- PLAN DE ACCION NEE-signed-signed (2).pdf"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "acceso-campus-discapacidad",
+                  "es": {
+                    "title": "Acceso al Campus"
+                  },
+                  "en": {
+                    "title": "Campus Access"
+                  },
+                  "content": {
+                    "type": "pdf",
+                    "src": "pdfs/impacto-social/Apoyo a la Existencia de Discapacidad/Social Impact - Equality - Mapa de rutas EPN.pdf"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capacitaciones-aspectos-sociales",
+          "es": {
+            "title": "Capacitaciones Dedicadas a Aspectos Sociales",
+            "description": ""
+          },
+          "en": {
+            "title": "Training Dedicated to Social Aspects",
+            "description": ""
+          },
+          "children": [
+            {
+              "id": "prevencion-alcohol-drogas",
+              "es": {
+                "title": "Prevención de Alcohol y Drogas"
+              },
+              "en": {
+                "title": "Alcohol and Drug Prevention"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/impacto-social/25.-iNFORME DE PREVENCION DE ALCOHOL Y DROGAS.pdf"
+              }
+            },
+            {
+              "id": "informe-ejecutivo-social",
+              "es": {
+                "title": "El Orgullo de Ser Quienes Somos"
+              },
+              "en": {
+                "title": "The Pride of Being Who We Are"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/impacto-social/25.-Informe ejecutivo 03 de julio-signed (2).pdf"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "es": {
+        "title": "Intercambio de Conocimientos"
+      },
+      "en": {
+        "title": "Knowledge Exchange"
+      }
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "programas-vinculacion-main",
+          "es": {
+            "title": "Programas de Vinculación",
+            "description": "Programas de vinculación con la comunidad y sectores productivos"
+          },
+          "en": {
+            "title": "Community Engagement Programs",
+            "description": "Community engagement and productive sector programs"
+          },
+          "children": [
+            {
+              "id": "programas-vinculacion",
+              "es": {
+                "title": "Sitio Externo - Programas de Vinculación"
+              },
+              "en": {
+                "title": "External Site - Engagement Programs"
+              },
+              "content": {
+                "type": "link",
+                "url": "https://www.epn.edu.ec/programas-de-vinculacion/",
+                "label": "Acceder a Programas de Vinculación"
+              }
+            },
+            {
+              "id": "clubes-epn",
+              "es": {
+                "title": "Clubes EPN"
+              },
+              "en": {
+                "title": "EPN Clubs"
+              },
+              "content": {
+                "type": "link",
+                "url": "https://www.epn.edu.ec/clubes/",
+                "label": "Acceder a Clubes EPN"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "es": {
+        "title": "Salud y Bienestar"
+      },
+      "en": {
+        "title": "Health and Wellbeing"
+      }
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "servicios-alimentacion-saludable",
+          "es": {
+            "title": "Servicios de Alimentación Saludable"
+          },
+          "en": {
+            "title": "Healthy Food Services"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-social/Salud y Bienestar/Health and Wellbeing - Servicios de Alimentacion Saludable.pdf"
+          },
+          "children": []
+        },
+        {
+          "id": "informe-area-medica",
+          "es": {
+            "title": "Informe Área Médica"
+          },
+          "en": {
+            "title": "Medical Area Report"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-social/28-29.-INFORME DE ACTIVIDADES CENTRO MEDICO PERIODO 2025-signed (1)-signed.pdf"
+          },
+          "children": []
+        },
+        
+        {
+          "id": "servicios-salud-sexual",
+          "es": {
+            "title": "Servicios de Salud Sexual"
+          },
+          "en": {
+            "title": "Sexual Health Services"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-social/Salud y Bienestar/Health and Wellbeing - Servicios de salud sexual y reproductiva.pdf"
+          },
+          "children": []
+        },
+        {
+          "id": "governance-salud-mental",
+          "es": {
+            "title": "Salud Mental"
+          },
+          "en": {
+            "title": "Mental Health"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-social/30 .-Informe de salud mental 2025.pdf"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

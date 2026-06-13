@@ -1,0 +1,670 @@
+{
+  "metadata": {
+    "es": {
+      "pageTitle": "Impacto ambiental",
+      "pageSubtitle": ""
+    },
+    "en": {
+      "pageTitle": "Environmental impact",
+      "pageSubtitle": ""
+    }
+  },
+  "blocks": [
+    {
+      "type": "subtitle",
+      "es": {
+        "title": "Sostenibilidad Ambiental"
+      },
+      "en": {
+        "title": "Environmental Sustainability"
+      }
+    },
+    {
+      "type": "accordion",
+      "sections": [
+    {
+      "id": "politica-accion-sostenible",
+      "es": {
+        "title": "Política de Accion Sostenible"
+      },
+      "en": {
+          "title": "Sustainable Action Policy"
+        },
+      "children": [
+        {
+          "id": "campus-sustentable-doc",
+          "es": {
+            "title": "Documento Campus sustentable"
+          },
+          "en": {
+            "title": "Sustainable Campus Document"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-ambiental/Campus-sustentable.pdf"
+          }
+        },
+        {
+          "id": "campus-sustentable-epn",
+          "es": {
+            "title": "Campus Sustentable EPN"
+          },
+          "en": {
+            "title": "Sustainable Campus EPN"
+          },
+          "children": [
+            {
+              "id": "objetivo-campus",
+              "es": {
+                "title": "Objetivo"
+              },
+              "en": {
+                "title": "Objective"
+              },
+              "content": {
+                "type": "slider",
+                "images": [
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/objetivo-campus.png",
+                    "alt": "Objetivo 1"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "integrantes-campus",
+              "es": {
+                "title": "Integrantes"
+              },
+              "en": {
+                "title": "Members"
+              },
+              "content": {
+                "type": "slider",
+                "images": [
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/Campus-1_Mesa-de-trabajo-1.png",
+                    "alt": "Integrantes 1"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/int1.jpeg",
+                    "alt": "Integrantes 2"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/int2.jpeg",
+                    "alt": "Integrantes 3"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/int3.jpeg",
+                    "alt": "Integrantes 4"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/int4.jpeg",
+                    "alt": "Integrantes 5"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/int5.jpeg",
+                    "alt": "Integrantes 6"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "politicas-campus",
+              "es": {
+                "title": "Políticas"
+              },
+              "en": {
+                "title": "Policies"
+              },
+              "content": {
+                "type": "slider",
+                "images": [
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/politicas.png",
+                    "alt": "Políticas 1"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/politicas2.png",
+                    "alt": "Políticas 2"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/politicas3.png",
+                    "alt": "Políticas 3"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/politicas4.png",
+                    "alt": "Políticas 4"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ejes-campus",
+              "es": {
+                "title": "Ejes"
+              },
+              "en": {
+                "title": "Axes"
+              },
+              "content": {
+                "type": "slider",
+                "images": [
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/ejes1.png",
+                    "alt": "Ejes 1"
+                  },
+                  {
+                    "src": "img/impacto-ambiental/campus-sustentable/ejes2.png",
+                    "alt": "Ejes 2"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alfabetizacion-sostenibilidad",
+      "es": {
+        "title": "Alfabetización y Capacitación Integral en Sostenibilidad"
+      },
+      "en": {
+        "title": "Literacy and Comprehensive Sustainability Training"
+      },
+      "children": [
+        {
+          "id": "alfabetizacion-personal",
+          "es": {
+            "title": "Alfabetización en Sostenibilidad - Personal Académico"
+          },
+          "en": {
+            "title": "Sustainability Literacy - Academic Staff"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-ambiental/ALFABETIZACION EN SOSTENIBILIDAD personal academico.pdf"
+          }
+        },
+        {
+          "id": "alfabetizacion-estudiantes",
+          "es": {
+            "title": "Alfabetización en Sostenibilidad - Estudiantes"
+          },
+          "en": {
+            "title": "Sustainability Literacy - Students"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-ambiental/ALFABETIZACION EN SOSTENIBILIDAD estudiantes.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "evaluacion-integral",
+      "es": {
+        "title": "Evaluación Integral"
+      },
+      "en": {
+        "title": "Comprehensive Evaluation"
+      },
+      "content": {
+        "type": "url",
+        "src": "https://cei.epn.edu.ec/evaluacion-integral/"
+      }
+    },
+    {
+      "id": "politica-compras-sostenibilidad",
+      "es": {
+        "title": "Política de Compras Públicas y Sostenibilidad Institucional"
+      },
+      "en": {
+        "title": "Public Procurement and Institutional Sustainability Policy"
+      },
+      "children": [
+        {
+          "id": "guia-contratacion-sostenible",
+          "es": {
+            "title": "Guía para la Contratación Pública Sostenible"
+          },
+          "en": {
+            "title": "Guide for Sustainable Public Procurement"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-ambiental/guia_para_cps_-_nro_7_final_revisada_resolucion-signed.pdf"
+          }
+        },
+        {
+          "id": "estrategia-nacional-cps",
+          "es": {
+            "title": "Estrategia Nacional de Contratación Pública Sostenible (CPS)"
+          },
+          "en": {
+            "title": "National Strategy for Sustainable Public Procurement (SPP)"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-ambiental/Estrategia-Nacional-de-CPS.pdf"
+          }
+        },
+        {
+          "id": "resoluciones-cumplimiento",
+          "es": {
+            "title": "Resoluciones y Firmas de Cumplimiento Sostenible"
+          },
+          "en": {
+            "title": "Resolutions and Sustainable Compliance Signatures"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-ambiental/resoluciOn_no._re-sercop-2022-0130-signed-signed.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "inversion-sostenible-epn",
+      "es": {
+        "title": "Inversión Sostenible EPN"
+      },
+      "en": {
+        "title": "Sustainable Investment EPN"
+      },
+      "content": {
+        "type": "pdf",
+        "src": "pdfs/impacto-ambiental/Campus-sustentable.pdf"
+      }
+    },
+    {
+      "id": "compromiso-estudiantil-sostenibilidad",
+      "es": {
+        "title": "Compromiso Estudiantil y Sostenibilidad"
+      },
+      "en": {
+        "title": "Student Commitment and Sustainability"
+      },
+      "children": [
+        {
+          "id": "formacion-sostenible-epn",
+          "es": {
+            "title": "Formación Sostenible en la EPN"
+          },
+          "en": {
+            "title": "Sustainable Formation at EPN"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/impacto-ambiental/Formacion_EPN.pdf"
+          }
+        },
+        {
+          "id": "plan-manejo-residuos",
+          "es": {
+            "title": "Plan de Manejo de Residuos"
+          },
+          "en": {
+            "title": "Waste Management Plan"
+          },
+          "content": {
+            "type": "overlay-slider",
+            "slides": [
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/4.jpeg",
+            "alt": "Diploma EcoConCiencia",
+            "description": "La Escuela Politécnica Nacional (EPN) ejecuta, desde abril de 2023, el Plan de Manejo de Residuos Sólidos, que consiste en la separación y posterior reciclaje de los diferentes tipos de desechos que se generan en la universidad. En este marco, el club estudiantil “EcoConCiencia” instaló dos Puntos de Reciclaje en la universidad y capacitó al personal de limpieza de la empresa Aso Azur en temas de separación de residuos. También, junto a la empresa Hazwat, realizaron la recolección de los desechos tóxicos y peligrosos, generados en la universidad en 2022. El comité Campus Sustentable organizó una visita al parque temático Laboratorio de Reciclaje, el cual entregó un diploma de reconocimiento al club “EcoConCiencia”."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/1-1.jpeg",
+            "alt": "Puntos de reciclaje",
+            "description": "Los puntos de reciclaje están ubicados en la Facultad de Ingeniería Civil y Ambiental (FICA) y, próximamente, en la Escuela de Formación de Tecnólogos (ESFOT); constan de recipientes para papel y cartón, plástico suave, plástico duro (espuma flex), vidrio y aluminio, botellas de pet, no recuperables (servilletas, papel higiénico y envases sucios) y residuos de comida."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/3-1.jpeg",
+            "alt": "Capacitación personal",
+            "description": "Por otro lado, sesenta miembros del personal de limpieza de la empresa Aso Azur fueron capacitados por parte de “EcoConCiencia”, coordinado por la M. Sc. Lucía Montenegro, docente de la FICA, e integrado por estudiantes del sexto semestre de la carrera de Ingeniería Ambiental y de la carrera de Saneamiento Ambiental de la ESFOT."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/3-2.jpeg",
+            "alt": "Capacitación para la Recolección de residuos",
+            "title": "Recolección de Residuos Tóxicos y Peligrosos",
+            "description": "La capacitación constó de una parte teórica para introducir al personal de limpieza en el manejo de temas como: reciclaje, reuso, reutilización, etc.; y, una parte práctica, con la separación de residuos, utilizando el punto de reciclaje de la FICA. Además, se visitó el Edificio No 34, en donde se almacenará los residuos, de manera temporal, hasta que sean entregados a recicladores de base, miembros de la Red Nacional de Recicladores del Ecuador (RENAREC)."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/1-2.jpeg",
+            "alt": "Recolección de residuos",
+            "description": "Además, el club “EcoConCiencia” con la empresa Hazwat recolectaron parte de los desechos tóxicos y peligrosos generados en la EPN, durante al año 2022. Este proceso, consumado el 17 de abril, inició con las inspecciones realizadas por la Ing. Eliana Peña, representante de la Dirección Administrativa, a las diferentes unidades generadoras de residuos de la EPN; posteriormente, se realizó el pesaje y etiquetado de estos elementos para su transporte hacía las instalaciones de Hazwat para su disposición final adecuada."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/4-1.jpeg",
+            "alt": "Visita al Laboratorio de Reciclaje",
+            "description": "En este año se recolectó casi diez toneladas de desechos, siendo los principales generadores el Departamento de Ciencias Nucleares y la Dirección Administrativa, con más de tres toneladas cada uno. Dicha Dirección realizó la baja de 3,4 toneladas de luminarias que fueron cambiadas en toda la institución, estos residuos contienen mercurio, que es un elemento muy tóxico para el ser humano."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/2-1.jpeg",
+            "alt": "Visita al Laboratorio de Reciclaje",
+            "description": "Desde 2021, la EPN mantiene un convenio de cooperación interinstitucional con la empresa ecuatoriana HAZWAT – CRA, gestor especializado con licencia ambiental para el manejo y disposición final de desechos no peligrosos, peligrosos y especiales. Durante este tiempo, la empresa ha dado disposición final adecuada a más de quince toneladas de desperdicios tóxicos y peligrosos de la EPN, mientras esta ha desarrollado nueve proyectos de titulación relacionados con la gestión que realiza HAZWAT y actualmente se encuentran en ejecución cinco Trabajos de Integración Curricular bajo la responsabilidad del Ing. Santiago Guerra, docente de la ESFOT y la Ing. Lucía Montenegro docente de la FICA.  Para el semestre 2023 A, se encuentran aprobados nueve temas que serán dirigidos por los Ing. Marcelo Salvador, Cristina Riofrio y Helena España, docentes de la FIQA.\nEl costo de la disposición final de residuos tóxicos y peligrosos del año 2022 sin este convenio sería de USD 35.000."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/3-3.jpeg",
+            "alt": "Visita al Laboratorio de Reciclaje",
+            "description": "Finalmente, representantes de direcciones administrativas, académicas, profesores y miembros de “EcoConCiencia” visitaron el Laboratorio de Reciclaje, parque temático de reciclaje y consumo responsable, el miércoles 19 de abril, con el fin de motivar acciones a nivel ciudadano y del campus universitario."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/2-2.jpeg",
+            "alt": "Visita al Laboratorio de Reciclaje",
+            "description": "Durante la visita, se conoció empresas gestoras, alternativas de valorización de residuos y mejores prácticas en su manejo. Esta actividad está acorde con las Políticas Ambientales del Campus de la Escuela Politécnica Nacional que, en relación con los desperdicios, mencionan: “En el campus se deberá hacer un uso eficiente de los insumos, que se utilizan y consumen, para el desempeño de todas sus actividades, de modo de reducir los desechos generados, aumentar el reciclaje y optimizar su disposición”."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/1-3.jpeg",
+            "alt": "Visita al Laboratorio de Reciclaje",
+            "description": "El Comité de Campus Sustentable, encargado de la coordinación, continuará realizando visitas con los interesados en ser promotores de las mejores prácticas en nuestra casa común, rumbo a consolidarse como un laboratorio urbano sostenible."
+          },
+          {
+            "src": "img/impacto-ambiental/Plan_Manejo_Residuos/4-2.jpeg",
+            "alt": "Diploma EcoConCiencia",
+            "description": "Durante la visita, el Laboratorio de Reciclaje entregó un diploma de reconocimiento al club “EcoConCiencia” por las actividades realizadas en la implementación de puntos de reciclaje dentro de la EPN, así como la coordinación con la organización mencionada para la participación de estudiantes de la FICA en actividades de vinculación con la colectividad, así como pasantías pre profesionales. La EPN es una institución comprometida con la solución de los problemas de la sociedad y está consciente de la importancia que tiene cuidar el medio ambiente. Es por esto que implementa políticas, estrategias y acciones concretas para lograr que su campus universitario cumpla con condiciones y buenas prácticas de sustentabilidad ambiental."
+          }
+        ]
+      }
+        },
+        {
+          "id": "emprendimientos-conciencia-ambiental",
+          "es": {
+            "title": "Emprendimientos con conciencia ambiental"
+          },
+          "en": {
+            "title": "Entrepreneurship with environmental awareness"
+          },
+          "content": {
+            "type": "overlay-slider",
+            "slides": [
+              {
+                "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/1.jpeg",
+                "alt": "Emprendimiento 1",
+                "title": "La Escuela Politécnica Nacional impulsa Emprendimientos con conciencia ambiental en el Día Mundial del Medio Ambiente"
+              },
+              {
+                "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/2.jpeg",
+                "alt": "Emprendimiento 2",
+                "description": "En conmemoración del Día Mundial del Medio Ambiente, la Escuela Politécnica Nacional (EPN) vivió una jornada dedicada al compromiso ecológico y la innovación sostenible con el evento Emprendimientos con conciencia ambiental, este evento fue organizado con el auspicio del Comité de Campus Sostenible de la EPN, del Banco de Alimentos de Quito y de Metal Cycle."
+              },
+              {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/3.jpeg",
+            "alt": "Emprendimiento 3",
+            "description": "El evento contó con la participación del Dr. Tarquino Sánchez, rector de la EPN, y de la Dra. Valentina Ramos, vicerrectora de Docencia, quienes resaltaron la importancia de integrar la sostenibilidad en los procesos académicos, investigativos y administrativos de la institución."
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/4.jpeg",
+            "alt": "Emprendimiento 4",
+            "description": "“Cada decisión que tomamos en nuestro campus tiene un impacto. Como institución, reiteramos nuestro firme compromiso con las iniciativas sostenibles. Es por eso que hemos impulsado consultorías para la implementación de paneles fotovoltaicos, con miras a generar energía limpia dentro de nuestro propio campus. Asimismo, avanzamos en propuestas de paisajismo que no solo embellecen nuestros espacios, sino que mejoran el entorno ecológico y fomentan una convivencia más armónica con la naturaleza”, enfatizó el Dr. Sánchez en su intervención inaugural."
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/5.jpeg",
+            "alt": "Emprendimiento 5",
+            "description": "Por su parte, la Dra. Ramos destacó el papel activo de la juventud en la construcción de un futuro más verde: “La sostenibilidad no es un concepto suelto, es una urgencia educativa. Desde el Vicerrectorado de Docencia creemos firmemente que la formación integral de nuestros estudiantes debe contemplar no solo el dominio técnico y científico, sino también la comprensión crítica del entorno en el que vivimos y al que impactamos. Por eso, estos espacios como ‘Emprendimientos con conciencia ambiental’ son fundamentales: permiten visibilizar cómo la innovación, la creatividad y el espíritu emprendedor de nuestros jóvenes pueden estar al servicio de la protección del planeta”."
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/6.jpeg",
+            "alt": "Emprendimiento 6",
+            "description": "Entre las actividades más representativas estuvo el lanzamiento de la campaña de reciclaje de residuos electrónicos (RAEE), que invitó a la comunidad a traer dispositivos fuera de uso como celulares, cámaras, radios o pequeños electrodomésticos para su correcta gestión por parte de una empresa especializada, con el fin reducir su impacto ambiental."
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/7.jpeg",
+            "alt": "Emprendimiento 7",
+            "description": "La feria de emprendimientos ecológicos fue otro punto clave de la jornada, con stands de productores locales que ofrecieron alimentos orgánicos, frutas y verduras, reforzando el mensaje de consumo responsable y de cercanía."
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/8.jpeg",
+            "alt": "Emprendimiento 8",
+            "description": "Además, estudiantes politécnicos presentaron proyectos de innovación tecnológica con enfoque ambiental, y se llevaron a cabo juegos educativos e interactivos, dirigidos a fomentar buenas prácticas sostenibles y saludables en el día a día."
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/9.jpeg",
+            "alt": "Emprendimiento 9",
+            "description": "Esta jornada fue una demostración del compromiso de la EPN con la educación ambiental, el desarrollo de soluciones tecnológicas responsables y el fortalecimiento de una cultura institucional más consciente y ecológica."
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/10.jpeg",
+            "alt": "Emprendimiento 10"
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/11.jpeg",
+            "alt": "Emprendimiento 11"
+          },
+          {
+            "src": "img/impacto-ambiental/emprendimientos_conciencia_ambiental/12.jpeg",
+            "alt": "Emprendimiento 12"
+          }
+            ]
+          }
+        },
+        {
+          "id": "proyectos-estudiantiles-cultura-ambiental",
+          "es": {
+            "title": "Proyectos estudiantiles fomentan la cultura ambiental en la Poli"
+          },
+          "en": {
+            "title": "Student projects promote environmental culture at the Poly"
+          },
+          "content": {
+            "type": "overlay-slider",
+            "slides": [
+              {
+                "src": "img/impacto-ambiental/proyectos_estudiantiles_cultura_ambiental/1.jpeg",
+                "alt": "Proyecto Estudiantil 1",
+                "description": "Desde desarrollar alternativas biodegradables, reciclaje, cuidado del agua, eco-oficinas, manejo de aceites residuales, residuos orgánicos, jardines verticales hasta adoptar un Poliárbol, son algunas de las ideas que manejan y desarrollan casi 40 estudiantes, de la Facultad de Química y Agroindustria (FIQA), con miras a aportar a la cultura ambiental en nuestra institución."
+
+              },
+              {
+                "src": "img/impacto-ambiental/proyectos_estudiantiles_cultura_ambiental/1.jpeg",
+            "alt": "Proyecto Estudiantil 1",
+            "description":"Evelyn Guaita, Kerly Maza y Cinthya Quiguango durante la entrega de los vegetales cosechados a partir de la reutilización de residuos orgánicos de cafetería de la Poli. "
+          },
+          {
+            "src": "img/impacto-ambiental/proyectos_estudiantiles_cultura_ambiental/2.jpeg",
+            "alt": "Proyecto Estudiantil 2",
+            "description": "Uno de los proyectos que se encuentra en su fase final, tiene el objetivo de gestionar de forma sencilla, rápida y económica los residuos orgánicos de cafetería de la Poli, a través de la reutilización como abono orgánico, para el cultivo de hortalizas que finalmente puedan servirse en los menús de la misma cafetería. De acuerdo a Kerly Maza, “primero se realizó la recolección, pesaje y clasificación de los residuos orgánicos y después en el patio de la Asociación de Estudiantes de Ingeniería Agroindustrial, se elaboró el compost, la siembra y el cuidado de hortalizas. A mediados de enero se entregará las hortalizas cosechadas al personal de la cafetería”, recalcó."
+          },
+          {
+            "src": "img/impacto-ambiental/proyectos_estudiantiles_cultura_ambiental/2.jpeg",
+            "alt": "Proyecto Estudiantil 2",
+            "description": "Dentro de esta campaña también hay proyectos donde estudiantes elaboran envases biodegradables y compostables a base de fibra de caña de azucar, Eduardo Rueda manifiesta que “la isla de basura del océano tiene 1,6 millones de Km2, casi tres veces el tamaño de Francia y contiene cerca de 80.000 toneladas de plástico, el Ecuador genera 2 toneladas de residuos no reciclables en el año que se biodegradan en 500 años, nuestro propósito es aportar a la reducción del impacto ambiental de los plásticos, para que se biodegraden en 90 días en vez de 182.000 días”."
+          },
+          {
+            "src": "img/impacto-ambiental/proyectos_estudiantiles_cultura_ambiental/3.jpeg",
+            "alt": "Proyecto Estudiantil 3",
+            "description": "Por otra parte, la comunidad politécnica ya tiene la oportunidad de “Adoptar un Poliárbol”, esta es la idea de siete jóvenes que buscan animar al cuidado de los árboles lozanos presentes en el campus, mediante el apadrinamiento de los mismos por parte de los miembros de nuestra universidad, de tal manera que se genere una conciencia ambiental. Gabriela Yépez, miembro de este equipo, dijo que “esta actividad es parte de varias campañas de concientización acerca del cuidado y la importancia de los árboles, incluso en el Día mundial de la Educación Ambiental, que se celebra cada 26 de enero, se está preparando un sinnúmero de actividades en torno a este tema”."
+          },
+          {
+            "src": "img/impacto-ambiental/proyectos_estudiantiles_cultura_ambiental/3.jpeg",
+            "alt": "Proyecto Estudiantil 3",
+            "description": "Cabe destacar que desde el 2016 existe el Comité de Campus Sustentable EPN, el cual se encarga de planificar y coordinar todas las acciones que conduzcan a cumplir con las políticas e indicadores de sustentabilidad ambiental con normas internacionales. En este sentido, Jady Pérez, miembro del Comité de Campus Sustentable y docente de la FIQA, resaltó que “son 11 los proyectos de Buenas Prácticas Ambientales que están desarrollando los estudiantes de las materias de Estudio y Evaluación de Impactos y Auditorías Ambientales, los cuales son parte de una campaña a gran escala para la aplicación de las Políticas Ambientales, y en este primer trimestre el Comité realizará el plan institucional de Buenas Prácticas, lo cual aporta a fomentar una cultura ambiental en la comunidad politécnica”, finalizó."
+          }
+        ]
+      }
+      }
+    ]
+    },
+    {
+      "id": "huella-carbono",
+      "es": {
+        "title": "Huella de Carbono"
+      },
+      "en": {
+        "title": "Carbon Footprint"
+      },
+      "content": [
+        {
+          "type": "pdf",
+          "src": "pdfs/impacto-ambiental/Determinacion Huella Ecologica.pdf"
+        },
+        {
+          "type": "statistics",
+          "statistics": [
+            {
+              "es": {
+                "dato": "1 374 tCO₂e",
+                "titulo": "Emisiones totales del alcance 2"
+              },
+              "en": {
+                "dato": "1 374 tCO₂e",
+                "titulo": "Total emissions from scope 2"
+              }
+            },
+            {
+              "es": {
+                "dato": "2024",
+                "titulo": "Año en que comenzó a registrar sus emisiones a los estándares de GEI"
+              },
+              "en": {
+                "dato": "2024",
+                "titulo": "Year started recording emissions to GHG standards"
+              }
+            },
+            {
+              "es": {
+                "dato": "2022",
+                "titulo": "Ámbito total 1 y 2 para el año de referencia, en tCO2e"
+              },
+              "en": {
+                "dato": "2022",
+                "titulo": "Total scope 1 and 2 for reference year, in tCO2e"
+              }
+            }
+          ]
+        }
+      ],
+      "children": []
+    }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "es": {
+        "title": "Educación Ambiental"
+      },
+      "en": {
+        "title": "Environmental Education"
+      }
+    },
+    {
+      "type": "accordion",
+      "sections": [
+    {
+        "id": "educacion-ambiental",
+        "es": {
+          "title": "Cursos sobre Sostenibilidad Ambiental"
+        },
+        "en": {
+          "title": "Courses on Environmental Sustainability"
+        },
+        "children": [
+          {
+            "id": "cursos-sostenibilidad",
+            "es": {
+              "title": "Mallas Académicas Ambientales"
+            },
+            "en": {
+              "title": "Environmental Academic Curricula"
+            },
+            "children": [
+              {
+                "id": "mallas-ambientales",
+                "es": {
+                  "title": "Ejemplo de Mallas Académicas Ambientales"
+                },
+                "en": {
+                  "title": "Example of Environmental Academic Curricula"
+                },
+                "content": {
+                  "type": "pdf",
+                  "src": "img/impacto-ambiental/educacion_ambiental/malla_ejemplo.pdf"
+                }
+              },    
+              {
+                "id": "mallas-ambientales-actualizadas",
+                "es": {
+                  "title": "Descarga nuestras Mallas Académicas Ambientales Actualizadas"
+                },
+                "en": {
+                  "title": "Download our Updated Environmental Academic Curricula"
+                },
+                "content": {
+                  "type": "download",
+                  "src": "otros/Environmental Education - Mallas Académicas Actualizadas.zip",
+                  "filename": "Environmental Education - Mallas Académicas Actualizadas.zip"
+                }
+              }
+            ]
+          },
+          {
+            "id": "cursos-cec-epn",
+            "es": {
+              "title": "CEC-EPN: Cursos de Sostenibilidad"
+            },
+            "en": {
+              "title": "CEC-EPN: Sustainability Courses"
+            },
+            "content": {
+              "type": "url",
+              "src": "https://www.cec-epn.edu.ec/cursos/categorias/ambientales/"
+
+            }
+          }]
+      }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "es": {
+        "title": "Investigación Ambiental"
+      },
+      "en": {
+        "title": "Environmental Research"
+      }
+    },
+    {
+      "type": "accordion",
+      "sections": [
+    {
+        "id": "laboratorios-centros-investigacion-ambiental",
+        "es": {
+          "title": "Laboratorios y Centros deInvestigación Ambiental"
+        },
+        "en": {
+          "title": "Laboratories and Centers for Environmental Research"
+        },
+        "children": [
+          {
+            "es": {
+              "title": "LIAVMS"
+            },
+            "en": {
+              "title": "LIAVMS"
+            },
+            "content": {
+              "type": "url",
+              "src": "https://liavms.epn.edu.ec/"
+            }
+          },
+          {
+            "es": {
+              "title": "CICAM"
+            },
+            "en": {
+              "title": "CICAM"
+            },
+            "content": {
+              "type": "url",
+              "src": "https://cicam.epn.edu.ec/"
+            }
+          }
+        ]
+      }
+      ]
+    }
+  ]
+}

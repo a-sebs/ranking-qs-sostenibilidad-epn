@@ -1,0 +1,864 @@
+{
+  "metadata": {
+    "es": {
+      "pageTitle": "Gobernanza",
+      "pageSubtitle": ""
+    },
+    "en": {
+      "pageTitle": "Governance",
+      "pageSubtitle": ""
+    }
+  },
+  "blocks": [
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "estructura-organizacional-gobernanza",
+          "es": {
+            "title": "Estructura Organizacional de Gestión de Procesos"
+          },
+          "en": {
+            "title": "Organizational Structure of Process Management"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/Gobernanza/Governance - Estructura organizacional de gestion de procesos.pdf"
+          },
+          "children": []
+        },
+        {
+          "id": "politicas-discriminacion-acoso",
+          "es": {
+            "title": "Políticas Contra la Discriminación y Acoso"
+          },
+          "en": {
+            "title": "Policies Against Discrimination and Harassment"
+          },
+          "children": [
+            {
+              "id": "codigo-etica-discriminacion",
+              "es": {
+                "title": "Código de Ética"
+              },
+              "en": {
+                "title": "Code of Ethics"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/Governance - Codigo de Etica.pdf"
+              }
+            },
+            {
+              "id": "slider-plan-institucional",
+              "es": {
+                "title": "Presentación Visual del Plan de Igualdad"
+              },
+              "en": {
+                "title": "Visual Presentation of the Equality Plan"
+              },
+              "content": {
+                "type": "slider",
+                "images": 
+                [{
+                    "src": "img/impacto-social/1.jpg",
+                    "alt": "plan institucional 1"
+                  },
+                  {
+                    "src": "img/impacto-social/2.jpg",
+                    "alt": "plan institucional 2"
+                  },
+                  {
+                    "src": "img/impacto-social/3.jpg",
+                    "alt": "plan institucional 3"
+                  },
+                  {
+                    "src": "img/impacto-social/4.jpg",
+                    "alt": "plan institucional 4"
+                  },
+                  {
+                    "src": "img/impacto-social/5.jpg",
+                    "alt": "plan institucional 5"
+                  }
+            ]
+              }
+            },
+            {
+              "id": "documento-plan-institucional",
+              "es": {
+                "title": "Documento Plan de Igualdad"
+              },
+              "en": {
+                "title": "Equality Plan Document"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/impacto-social/plan_igualdad_final.pdf"
+              }
+            },
+            {
+              "id": "protocolo-acoso-sexual",
+              "es": {
+                "title": "Protocolo de Prevención y Actuación frente a Casos de Acoso Sexual"
+              },
+              "en": {
+                "title": "Protocol for Prevention and Action Against Sexual Harassment Cases"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/31.-PROTOCOLOde_prevenciOn_y_actuaciOn_frente_a_casos_de_acoso_sexual.pdf"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "codigo-etica-main",
+          "es": {
+            "title": "Política Contra el Soborno y la Corrupción"
+          },
+          "en": {
+            "title": "Policy Against Bribery and Corruption"
+          },
+          "children": [
+            {
+              "type": "subtitle",
+              "es": {
+                "title": "Hablemos de ética en la Escuela Politecnica Nacional",
+                "description": "La tradición y el prestigio de la Politécnica exigen que el comportamiento de sus miembros se encuadre en el respeto mutuo, la honestidad, el apego a la verdad y el compromiso con la institución. Con tal antecedente, el presente Código de Ética define la norma de conducta de los miembros de la Escuela Politécnica Nacional"
+              },
+              "en": {
+                "title": "Let's talk about ethics at the National Polytechnic School",
+                "description": "The tradition and prestige of the Polytechnic demand that the behavior of its members be framed in mutual respect, honesty, adherence to truth, and commitment to the institution. With this background, the present Code of Ethics defines the standard of conduct for members of the National Polytechnic School"
+              }
+            },
+            {
+              "type": "subtitle",
+              "es": {
+                "title": "Respeto hacia sí mismo y hacia los demás",
+                "description": "",
+                "list": [
+                  "Fomentar la solidaridad entre los miembros de la comunidad.",
+                  "Comportarse de manera recta, que afirme la autoestima y contribuya al prestigio institucional, que sea ejemplo y referente para los demás.",
+                  "Respetar a los demás y en particular la honra ajena y rechazar todo tipo de acusaciones o denuncias infundadas.",
+                  "Respetar el pensamiento, visión y criterio ajenos.",
+                  "Excluir toda forma de violencia y actitudes discriminatorias.",
+                  "Apoyar un ambiente pluralista y respetuoso de las diferencias.",
+                  "Convertir la puntualidad en norma de conducta.",
+                  "Evitar el consumo de bebidas alcohólicas, tabaco, substancias psicotrópicas o estupefacientes."
+                ]
+              },
+              "en": {
+                "title": "Respect for oneself and others",
+                "description": "",
+                "list": [
+                  "Foster solidarity among community members.",
+                  "Behave in an upright manner that affirms self-esteem and contributes to institutional prestige, being an example and reference for others.",
+                  "Respect others and, in particular, the honor of others and reject all kinds of unfounded accusations or complaints.",
+                  "Respect others' thoughts, visions, and criteria.",
+                  "Exclude all forms of violence and discriminatory attitudes.",
+                  "Support a pluralistic and respectful environment of differences.",
+                  "Make punctuality a standard of conduct.",
+                  "Avoid the consumption of alcoholic beverages, tobacco, psychotropic substances or narcotics."
+                ]
+              }
+            },
+            {
+              "type": "subtitle",
+              "es": {
+                "title": "Honestidad",
+                "description": "",
+                "list": [
+                  "Hacer de la honestidad el principio básico de comportamiento en todos los actos.",
+                  "Actuar con justicia, probidad y diligencia.",
+                  "Actuar de acuerdo a la conciencia, sin que presiones o aspiraciones particulares vulneren los intereses institucionales.",
+                  "Velar por el cumplimiento de las garantías, derechos y deberes de los miembros de la comunidad politécnica.",
+                  "Tomar oportunamente las medidas correctivas necesarias para superar las irregularidades que pudieren ocurrir."
+                ]
+              },
+              "en": {
+                "title": "Honesty",
+                "description": "",
+                "list": [
+                  "Make honesty the basic principle of behavior in all actions.",
+                  "Act with justice, integrity, and diligence.",
+                  "Act according to conscience, without particular pressures or aspirations undermining institutional interests.",
+                  "Ensure compliance with the guarantees, rights, and duties of members of the polytechnic community.",
+                  "Timely implement the necessary corrective measures to overcome irregularities that may occur."
+                ]
+              }
+            },
+            {
+              "type": "subtitle",
+              "es": {
+                "title": "Verdad",
+                "description": "",
+                "list": [
+                  "Hacer una mística de la prosecución de la verdad, tanto en la actividad académica como en lo cotidiano.",
+                  "Informar con transparencia y en forma completa.",
+                  "Emitir mensajes con autenticidad, que no distorsionen eventos ni realidades."
+                ]
+              },
+              "en": {
+                "title": "Truth",
+                "description": "",
+                "list": [
+                  "Make the pursuit of truth a mystique, both in academic activity and in everyday life.",
+                  "Report with transparency and in complete form.",
+                  "Issue messages with authenticity, which do not distort events or realities."
+                ]
+              }
+            },
+            {
+              "type": "subtitle",
+              "es": {
+                "title": "Compromiso con la institución",
+                "description": "",
+                "list": [
+                  "Ser leal a la Politécnica y a los valores institucionales.",
+                  "Cumplir las normas constitucionales, legales, estatutarias, reglamentarias y las resoluciones de la autoridad legítimamente designada.",
+                  "Reconocer y aceptar las consecuencias de las decisiones.",
+                  "Participar activamente en la vida y en la dirección de la institución, de acuerdo a los mecanismos de participación, aportando proactivamente con iniciativas de mejoramiento institucional y mantenerse informado.",
+                  "Emplear los recursos institucionales con austeridad, de acuerdo a los fines correspondientes.",
+                  "Contribuir al ornato y limpieza de nuestra Casa de Estudios."
+                ]
+              },
+              "en": {
+                "title": "Commitment to the institution",
+                "description": "",
+                "list": [
+                  "Be loyal to the Polytechnic and its institutional values.",
+                  "Comply with constitutional, legal, statutory, regulatory norms and resolutions of the legitimately designated authority.",
+                  "Recognize and accept the consequences of decisions.",
+                  "Actively participate in the life and direction of the institution, in accordance with participation mechanisms, proactively contributing initiatives for institutional improvement and staying informed.",
+                  "Use institutional resources with austerity, according to their corresponding purposes.",
+                  "Contribute to the beautification and cleanliness of our House of Studies."
+                ]
+              }
+            },
+            {
+              "id": "documento-codigo-etica",
+              "es": {
+                "title": "Documento Código de Ética"
+              },
+              "en": {
+                "title": "Code of Ethics Document"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/CODIGO-DE-ETICA-signed-signed.pdf"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "resolucion-comite-sostenibilidad",
+          "es": {
+            "title": "Resolución Administrativa Comité de Sostenibilidad"
+          },
+          "en": {
+            "title": "Administrative Resolution Sustainability Committee"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/Gobernanza/Governance - Resolucion administrativa comite de sostenibilidad.pdf"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "plan-estrategico-desarrollo",
+          "es": {
+            "title": "Plan Estratégico de Desarrollo Institucional"
+          },
+          "en": {
+            "title": "Institutional Development Strategic Plan"
+          },
+          "children": [
+            {
+              "id": "documento-pedi",
+              "es": {
+                "title": "Documento PEDI"
+              },
+              "en": {
+                "title": "PEDI Document"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/PEDI/PEDI.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "como-lo-construimos",
+              "es": {
+                "title": "¿Cómo lo construimos?"
+              },
+              "en": {
+                "title": "How did we build it?"
+              },
+              "content": {
+                "type": "slider",
+                "images": [
+                  {
+                    "src": "img/gobernanza/pedi.webp",
+                    "alt": "PEDI Construction"
+                  }
+                ]
+              },
+              "children": []
+            },
+            {
+              "id": "videos-pedi",
+              "es": {
+                "title": "Videos"
+              },
+              "en": {
+                "title": "Videos"
+              },
+              "children": [
+                {
+                  "id": "video-pedi-1",
+                  "es": {
+                    "title": "Video: Introducción al PEDI"
+                  },
+                  "en": {
+                    "title": "Video: Introduction to PEDI"
+                  },
+                  "content": {
+                    "type": "youtube",
+                    "src": "https://www.youtube.com/watch?v=vcn1uBChwdQ&t=4s"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "video-pedi-2",
+                  "es": {
+                    "title": "Video: Implementación del PEDI"
+                  },
+                  "en": {
+                    "title": "Video: PEDI Implementation"
+                  },
+                  "content": {
+                    "type": "youtube",
+                    "src": "https://www.youtube.com/watch?v=iv035xw6wDs&t=2s"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "galeria-pedi",
+              "es": {
+                "title": "Galería"
+              },
+              "en": {
+                "title": "Gallery"
+              },
+              "content": {
+                "type": "slider",
+                "images": [
+                  {
+                    "src": "img/gobernanza/PEDI/1.jpg",
+                    "alt": "PEDI 1"
+                  },
+                  {
+                    "src": "img/gobernanza/PEDI/2.webp",
+                    "alt": "PEDI 2"
+                  },
+                  {
+                    "src": "img/gobernanza/PEDI/3.jpg",
+                    "alt": "PEDI 3"
+                  },
+                  {
+                    "src": "img/gobernanza/PEDI/4.webp",
+                    "alt": "PEDI 4"
+                  },
+                  {
+                    "src": "img/gobernanza/PEDI/5.webp",
+                    "alt": "PEDI 5"
+                  },
+                  {
+                    "src": "img/gobernanza/PEDI/6.jpeg",
+                    "alt": "PEDI 6"
+                  },
+                  {
+                    "src": "img/gobernanza/PEDI/7.webp",
+                    "alt": "PEDI 7"
+                  },
+                  {
+                    "src": "img/gobernanza/PEDI/8.png",
+                    "alt": "PEDI 8"
+                  }
+                ]
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "valores-eticos-epn",
+          "es": {
+            "title": "Valores Éticos en la EPN"
+          },
+          "en": {
+            "title": "Ethical Values at EPN"
+          },
+          "children": [
+            {
+              "id": "codigo-etica-valores",
+              "es": {
+                "title": "Código de Ética"
+              },
+              "en": {
+                "title": "Code of Ethics"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Código de Ética.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "estatuto-epn-art19",
+              "es": {
+                "title": "Estatuto EPN Art. 19"
+              },
+              "en": {
+                "title": "EPN Statute Art. 19"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Estatuto EPN art. 19.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "estatuto-fepon",
+              "es": {
+                "title": "Estatuto FEPON"
+              },
+              "en": {
+                "title": "FEPON Statute"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Estatuto FEPON.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "etica-profesional-social",
+              "es": {
+                "title": "Ética Profesional y Social"
+              },
+              "en": {
+                "title": "Professional and Social Ethics"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Etica profesional y social.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "modelo-educativo-epn",
+              "es": {
+                "title": "Modelo Educativo EPN"
+              },
+              "en": {
+                "title": "EPN Educational Model"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Modelo Educativo EPN.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "plan-capacitacion",
+              "es": {
+                "title": "Plan de Capacitación 2024"
+              },
+              "en": {
+                "title": "Training Plan 2024"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Plan de Capacitación 2024.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "protocolo-discriminacion-acoso",
+              "es": {
+                "title": "Protocolo Contra la Discriminación y Acoso"
+              },
+              "en": {
+                "title": "Protocol Against Discrimination and Harassment"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Protocolo contra la discriminación y el acoso..pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "protocolo-prevension-violencia",
+              "es": {
+                "title": "Protocolo de Prevención de Violencia"
+              },
+              "en": {
+                "title": "Violence Prevention Protocol"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Protocolo de prevención casos de violencia-.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "reglamento-elecciones-fepon",
+              "es": {
+                "title": "Reglamento de Elecciones FEPON"
+              },
+              "en": {
+                "title": "FEPON Elections Regulations"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Reglamento de elecciones FEPON.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "servicios-bienestar-igualdad",
+              "es": {
+                "title": "Servicios de Bienestar e Igualdad"
+              },
+              "en": {
+                "title": "Welfare and Equality Services"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Servicios de Bienestar e Igualdad.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "student-union-epn",
+              "es": {
+                "title": "Student Union of EPN"
+              },
+              "en": {
+                "title": "Student Union of EPN"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Student Union of EPN.pdf"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "democracia-estudiantil",
+          "es": {
+            "title": "Democracia Estudiantil"
+          },
+          "en": {
+            "title": "Student Democracy"
+          },
+          "children": [
+            {
+              "id": "estatuto-fepon-democracia",
+              "es": {
+                "title": "Estatuto FEPON"
+              },
+              "en": {
+                "title": "FEPON Statute"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/valores eticos epn/Governance - Estatuto FEPON.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "convocatoria-elecciones",
+              "es": {
+                "title": "Convocatoria Elecciones Estudiantes 2025"
+              },
+              "en": {
+                "title": "Student Elections Convocation 2025"
+              },
+              "content": {
+                "type": "pdf",
+                "src": "pdfs/Gobernanza/Convocatoria-elecciones-estudiantes-CD-2025-signed.pdf"
+              },
+              "children": []
+            },
+            {
+              "id": "proceso-elecciones-cp",
+              "es": {
+                "title": "Proceso de Elecciones de Estudiantes ante el Consejo Politécnico"
+              },
+              "en": {
+                "title": "Student Elections Process before the Polytechnic Council"
+              },
+              "children": [
+                {
+                  "type": "subtitle",
+                  "es": {
+                    "title": "Resolución RCP-005-2026",
+                    "description": "La elección se llevó a cabo, en modalidad telemática, el viernes 30 de enero de 2026, de conformidad con el siguiente calendario:",
+                    "list": [
+                      "Artículo 1.- Convocar a elecciones de tres representantes de los estudiantes, con sus respectivos alternos, ante Consejo Politécnico.",
+                      "Artículo 2.- La Junta Electoral que organizará y dirigirá el proceso electoral estará integrada de la siguiente manera:",
+                      "Artículo 3.- La Secretaría de la Junta estará a cargo de la Secretaría General de la Escuela Politécnica Nacional."
+                    ]
+                  },
+                  "en": {
+                    "title": "Resolution RCP-005-2026",
+                    "description": "The election was held, in telematic mode, on Friday, January 30, 2026, in accordance with the following calendar:",
+                    "list": [
+                      "Article 1.- Convene elections for three student representatives, with their respective alternates, to the Polytechnic Council.",
+                      "Article 2.- The Electoral Board that will organize and direct the electoral process will be composed as follows:",
+                      "Article 3.- The Board's Secretariat will be in charge of the General Secretariat of the National Polytechnic School."
+                    ]
+                  }
+                },
+                {
+                  "id": "slider-tabla-elecciones",
+                  "es": {
+                    "title": "Cronograma de Actividades"
+                  },
+                  "en": {
+                    "title": "Activities Schedule"
+                  },
+                  "content": {
+                    "type": "slider",
+                    "images": [
+                      {
+                        "src": "img/gobernanza/tabla1.webp",
+                        "alt": "Tabla de resultados 1"
+                      },
+                      {
+                        "src": "img/gobernanza/tabla2.webp",
+                        "alt": "Tabla de resultados 2"
+                      }
+                    ]
+                  },
+                  "children": []
+                },
+                {
+                  "type": "subtitle",
+                  "es": {
+                    "title": "Resolución JE-CP-002-2026",
+                    "description": "",
+                    "list": [
+                      "Artículo 1.- Remitir para la publicación del registro electoral generado, en coordinación con la Dirección de Gestión de la Información y Procesos (DGIP), a la Dirección de Comunicación, con el fin de que este sea publicado en la página web institucional hasta el 09 de enero de 2026, de conformidad con lo que determina el Reglamento General de Elecciones y con lo establecido en el cronograma del proceso convocado mediante de la Resolución RCP-005-2026, expedida por el Consejo Politécnico de la Escuela Politécnica Nacional.",
+                      "Artículo 2.- Solicitar a la Dirección de Comunicación que envíe un correo electrónico masivo a todos los estudiantes de la comunidad politécnica en referencia a lo mencionado en el artículo 1.",
+                      "Artículo 3.- Delegar al Presidente de la Junta Electoral la potestad de que, en caso de que no se presenten observaciones al registro electoral, proceda directamente a solicitar la publicación del registro electoral definitivo, toda vez que su contenido ha sido conocido por la Junta y este no cambiaría.",
+                      "Artículo 4.- Remitir el Registro Electoral Definitivo a la Dirección de Comunicación el martes 13 de enero de 2026, a fin de que sea publicado en la página web institucional.",
+                      "Artículo 5.- Se delega a la Presidente de la Junta Electoral la coordinación necesaria para la publicación referida en esta resolución"
+                    ]
+                  },
+                  "en": {
+                    "title": "Resolution JE-CP-002-2026",
+                    "description": "",
+                    "list": [
+                      "Article 1.- Forward for publication the electoral registry generated, in coordination with the Management of Information and Processes Department (DGIP), to the Communications Department, so that it is published on the institutional website by January 9, 2026, in accordance with the General Elections Regulations and the schedule established in the process called through Resolution RCP-005-2026, issued by the Polytechnic Council of the National Polytechnic School.",
+                      "Article 2.- Request the Communications Department to send a mass email to all students of the polytechnic community regarding what is mentioned in article 1.",
+                      "Article 3.- Delegate to the President of the Electoral Board the power to, in the event that no observations are presented to the electoral registry, proceed directly to request the publication of the definitive electoral registry, since its content has been known by the Board and it would not change.",
+                      "Article 4.- Send the Definitive Electoral Registry to the Communications Department on Tuesday, January 13, 2026, so that it is published on the institutional website.",
+                      "Article 5.- The President of the Electoral Board is delegated the necessary coordination for the publication referred to in this resolution"
+                    ]
+                  }
+                },
+                {
+                  "type": "subtitle",
+                  "es": {
+                    "title": "RESOLUCIÓN JE-CP-003-2026",
+                    "description": "",
+                    "list": [
+                      "Artículo 1.- Aprobar los siguientes lineamientos y formatos para el proceso convocado a través de la Resolución RCP-005-2026, de 08 de enero de 2026:",
+                      "Artículo 2.- Remitir los lineamientos y formatos aprobados a través de la presente Resolución a la Dirección de Comunicación, para su correspondiente difusión y publicación"
+                    ]
+                  },
+                  "en": {
+                    "title": "RESOLUTION JE-CP-003-2026",
+                    "description": "",
+                    "list": [
+                      "Article 1.- Approve the following guidelines and formats for the process convened through Resolution RCP-005-2026, of January 8, 2026:",
+                      "Article 2.- Forward the guidelines and formats approved through this Resolution to the Communications Department, for their corresponding dissemination and publication"
+                    ]
+                  }
+                },
+                {
+                  "id": "lineamientos-generales",
+                  "es": {
+                    "title": "Lineamientos Generales"
+                  },
+                  "en": {
+                    "title": "General Guidelines"
+                  },
+                  "content": {
+                    "type": "pdf",
+                    "src": "pdfs/Gobernanza/democracia/LINEAMIENTOS-GENERALES.pdf"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "formato-inscripcion",
+                  "es": {
+                    "title": "Formato de Inscripción de Candidatura"
+                  },
+                  "en": {
+                    "title": "Candidacy Registration Format"
+                  },
+                  "content": {
+                    "type": "download",
+                    "src": "pdfs/Gobernanza/democracia/FOMATO-DE-INSCRIPCION-CANDIDATURA.docx",
+                    "filename": "FORMATO-DE-INSCRIPCION-CANDIDATURA.docx"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "formato-aceptacion",
+                  "es": {
+                    "title": "Formato de Aceptación de Candidatura"
+                  },
+                  "en": {
+                    "title": "Candidacy Acceptance Format"
+                  },
+                  "content": {
+                    "type": "download",
+                    "src": "pdfs/Gobernanza/democracia/FOMATO-DE-ACEPTACION-CANDIDATURA.docx",
+                    "filename": "FORMATO-DE-ACEPTACION-CANDIDATURA.docx"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "formato-respaldo",
+                  "es": {
+                    "title": "Formato de Respaldo de Candidatura"
+                  },
+                  "en": {
+                    "title": "Candidacy Support Format"
+                  },
+                  "content": {
+                    "type": "download",
+                    "src": "pdfs/Gobernanza/democracia/FORMATO-DE-RESPALDO-CANDIDATURA.docx",
+                    "filename": "FORMATO-DE-RESPALDO-CANDIDATURA.docx"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "comite-sostenibilidad",
+          "es": {
+            "title": "Comité de Sostenibilidad"
+          },
+          "en": {
+            "title": "Sustainability Committee"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/Gobernanza/valores eticos epn/Governance Resolucion administrativa comite de sostenibilidad.pdf"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "informe-financiero",
+          "es": {
+            "title": "Informe Financiero"
+          },
+          "en": {
+            "title": "Financial Report"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/Gobernanza/Informe-final-rendicion_de_cuentas_2024-VIIV.pdf#page=73"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "grabacion-reunion-general-anual",
+          "es": {
+            "title": "Grabación de la Reunión General Anual"
+          },
+          "en": {
+            "title": "Recording of Annual General Meeting"
+          },
+          "content": {
+            "type": "youtube",
+            "src": "https://youtu.be/IU7yC7RXiXs"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "estatuto-epn-art19",
+          "es": {
+            "title": "Estatuto EPN Artículo 19"
+          },
+          "en": {
+            "title": "EPN Statute Article 19"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/Gobernanza/Governance - Estatuto EPN art. 19.pdf"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

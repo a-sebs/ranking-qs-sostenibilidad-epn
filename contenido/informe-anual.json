@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "es": {
+      "pageTitle": "Informe Anual"
+    },
+    "en": {
+      "pageTitle": "Annual Report"
+    }
+  },
+  "blocks": [
+    {
+      "type": "accordion",
+      "sections": [
+        {
+          "id": "seccion-1",
+          "es": {
+            "title": "Documento de la rendición de cuentas"
+          },
+          "en": {
+            "title": "Accountability Report Document"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/informe-anual/Rendicion-de-cuentas-2024_V-30-06-2025-1-1.pdf"
+          }
+        },
+        {
+          "id": "seccion-2",
+          "es": {
+            "title": "Presentación de la rendición de cuentas"
+          },
+          "en": {
+            "title": "Accountability Report Presentation"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/informe-anual/PROYECTAR-RENDICION-web_compressed.pdf"
+          }
+        },
+        {
+          "id": "seccion-3",
+          "es": {
+            "title": "Documento del Informe anual"
+          },
+          "en": {
+            "title": "Annual Report Document"
+          },
+          "content": {
+            "type": "pdf",
+            "src": "pdfs/informe-anual/Informe-Anual-2024-LOTAIP_Escuela-Politecnica-Nacional_17.02.2025.pdf"
+          }
+        }
+      ]
+    }
+  ]
+}
