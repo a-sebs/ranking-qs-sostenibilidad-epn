@@ -1,6 +1,6 @@
 # 🌍 Ranking QS · Sostenibilidad EPN
 
-> Sitio web oficial de Sostenibilidad de la Escuela Politécnica Nacional (EPN), orientado a presentar información y evidencias para el **Ranking QS Sustainability**.
+> Sitio web de Sostenibilidad de la Escuela Politécnica Nacional (EPN), orientado a presentar información y evidencias para el **Ranking QS Sustainability**.
 
 Este proyecto es un portal web **estático y dinámico a la vez**, diseñado sin necesidad de backend. Utiliza una arquitectura basada en archivos JSON para gestionar y renderizar el contenido de forma dinámica y bilingüe, manteniendo una navegación rápida y un fácil mantenimiento.
 
