@@ -1836,6 +1836,19 @@ footer {
   body.nav-open {
     overflow: hidden;
   }
+
+  /*
+   * FIX DE STACKING CONTEXT:
+   * .page-header tiene position:sticky + z-index:100, lo que crea un stacking
+   * context propio. El nav panel (z-index:300 dentro de ese contexto) tiene un
+   * z-index efectivo de solo 100 en el root, quedando DEBAJO del backdrop
+   * (z-index:299 en root). Al elevar el header a 310 cuando el menú está
+   * abierto, todo su stacking context (incluyendo el nav) supera al backdrop y
+   * los enlaces vuelven a ser clickeables.
+   */
+  body.nav-open .page-header {
+    z-index: 310;
+  }
 }
 
 @media (max-width: 768px) {

@@ -1,7 +1,7 @@
-# 📘 Documentación Técnica — Ranking QS · Sostenibilidad EPN
+# Documentación Técnica — Ranking QS · Sostenibilidad EPN
 
-> **Versión:** 1.0  
-> **Fecha:** Mayo 2026  
+> **Versión:** 1.1  
+> **Fecha:** Junio 2026  
 > **Proyecto:** Sitio web de Sostenibilidad para la Escuela Politécnica Nacional (EPN), orientado al ranking QS Sustainability.
 
 ---
@@ -12,14 +12,14 @@
 2. [Estructura de Archivos](#2-estructura-de-archivos)
 3. [Archivos HTML — Contenido Quemado (Hardcoded)](#3-archivos-html--contenido-quemado-hardcoded)
 4. [Funciones JavaScript (`contenido.js`)](#4-funciones-javascript-contenidojs)
-5. [Archivo Auxiliar `images.js`](#5-archivo-auxiliar-imagesjs)
-6. [Formato de los Archivos JSON de Contenido](#6-formato-de-los-archivos-json-de-contenido)
-7. [Cómo Agregar Nuevas Secciones](#7-cómo-agregar-nuevas-secciones)
-8. [Sistema de Traducción (Español / Inglés)](#8-sistema-de-traducción-español--inglés)
-9. [Restricciones y Limitaciones](#9-restricciones-y-limitaciones)
-10. [Consejos de Uso](#10-consejos-de-uso)
-11. [Guía para Modificaciones Futuras](#11-guía-para-modificaciones-futuras)
-12. [Referencia Rápida de Tipos de Contenido](#12-referencia-rápida-de-tipos-de-contenido)
+5. [Formato de los Archivos JSON de Contenido](#5-formato-de-los-archivos-json-de-contenido)
+6. [Cómo Agregar Nuevas Secciones](#6-cómo-agregar-nuevas-secciones)
+7. [Sistema de Traducción (Español / Inglés)](#7-sistema-de-traducción-español--inglés)
+8. [Restricciones y Limitaciones](#8-restricciones-y-limitaciones)
+9. [Consejos de Uso](#9-consejos-de-uso)
+10. [Guía para Modificaciones Futuras](#10-guía-para-modificaciones-futuras)
+11. [Referencia Rápida de Tipos de Contenido](#11-referencia-rápida-de-tipos-de-contenido)
+12. [Menú Hamburguesa Responsive](#12-menú-hamburguesa-responsive)
 
 ---
 
@@ -72,7 +72,6 @@ ranking-QS/
 ├── gobernanza.html               ← Página de Gobernanza
 ├── info-adicional.html           ← Página de Información Adicional
 ├── contenido.js                  ← Motor principal de renderizado
-├── images.js                     ← Gestión de imágenes (legacy, no se usa activamente)
 ├── style.css                     ← Hoja de estilos global
 ├── contenido/                    ← Archivos JSON de contenido
 │   ├── translations.json         ← Traducciones comunes (header/footer/index)
@@ -85,7 +84,8 @@ ranking-QS/
 │   ├── escudo-web-1.png          ← Logo header
 │   ├── logo-epn-LINEAS.webp      ← Logo footer
 │   ├── backgoound.png            ← Fondo global (blur)
-│   ├── videoweb3.mp4             ← Video hero de inicio
+│   ├── videoweb3.mp4             ← Video hero (desktop)
+│   ├── videoweb.mp4              ← Video hero (móvil, max-width 768px)
 │   ├── gobernanza/               ← Imágenes de gobernanza
 │   ├── impacto-ambiental/        ← Imágenes de impacto ambiental
 │   └── impacto-social/           ← Imágenes de impacto social
@@ -112,16 +112,35 @@ Las páginas `gobernanza.html`, `impacto-ambiental.html`, `impacto-social.html`,
 <!-- QUEMADO: Logo de la institución -->
 <img src="img/escudo-web-1.png" alt="Logo EOPN" width="50" height="60">
 
-<!-- QUEMADO: Enlaces de navegación (el texto se traduce vía JS) -->
-<li><a href="./">Inicio</a></li>
-<li><a href="informe-anual.html">Informe Anual</a></li>
-<li><a href="impacto-ambiental.html">Impacto Ambiental</a></li>
-<li><a href="impacto-social.html">Impacto Social</a></li>
-<li><a href="gobernanza.html">Gobernanza</a></li>
-<li><a href="info-adicional.html">Información Adicional</a></li>
+<!-- QUEMADO: Backdrop (fondo oscuro del menú móvil) -->
+<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+<!-- QUEMADO: Nav con ID para el menú hamburguesa -->
+<nav class="page-nav" id="page-nav-menu">
+  <!-- Botón cerrar (visible solo en móvil) -->
+  <button class="nav-close-btn" id="nav-close-btn" aria-label="Cerrar menú">
+    <span></span><span></span>
+  </button>
+
+  <!-- QUEMADO: Enlaces de navegación (el texto se traduce vía JS) -->
+  <li><a href="./">Inicio</a></li>
+  <li><a href="informe-anual.html">Informe Anual</a></li>
+  <li><a href="impacto-ambiental.html">Impacto Ambiental</a></li>
+  <li><a href="impacto-social.html">Impacto Social</a></li>
+  <li><a href="gobernanza.html">Gobernanza</a></li>
+  <li><a href="info-adicional.html">Información Adicional</a></li>
+</nav>
 
 <!-- QUEMADO: Botón de idioma -->
 <button id="language-toggle-btn">EN</button>
+
+<!-- QUEMADO: Botón hamburguesa (visible solo en móvil < 768px) -->
+<button class="hamburger-btn" id="hamburger-btn"
+  aria-label="Abrir menú" aria-expanded="false" aria-controls="page-nav-menu">
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+</button>
 ```
 
 > **⚠️ Nota:** Si se agrega una nueva sección/página al sitio, se debe actualizar la navegación en **TODOS** los archivos HTML manualmente.
@@ -171,8 +190,11 @@ Email:     info@epn.edu.ec
 Además de los elementos comunes, `index.html` tiene contenido exclusivo:
 
 ```html
-<!-- QUEMADO: Video hero autoplay -->
-<video class="hero-img" autoplay loop muted>
+<!-- QUEMADO: Video hero autoplay con fuentes responsive -->
+<video class="hero-img" autoplay loop muted playsinline>
+    <!-- Fuente optimizada para móvil (máx. 768px) -->
+    <source src="img/videoweb.mp4" type="video/mp4" media="(max-width: 768px)">
+    <!-- Fuente para desktop -->
     <source src="img/videoweb3.mp4" type="video/mp4">
 </video>
 
@@ -269,6 +291,7 @@ Orquesta la inicialización completa en este orden:
 4. `generateDynamicContent()` — Genera todo el contenido desde JSON
 5. `setupHashUpdateOnToggle()` — Sincroniza URL hash con acordeones
 6. `handleHashNavigation()` — Abre el acordeón indicado por `#hash`
+7. `setupMobileMenu()` — Inicializa el menú hamburguesa responsive *(nuevo)*
 
 ### 4.4 Cambio de Idioma — `applyLanguage(lang)` (Líneas 98–141)
 
@@ -427,28 +450,37 @@ Slider de overlay:
 - Alterna entre `'es'` y `'en'`
 - Llama a `applyLanguage(newLang)` que regenera todo
 
-### 4.12 Punto de Entrada (Línea 1297)
+### 4.12 Menú Hamburguesa Móvil — `setupMobileMenu()` (Líneas 1304–1382)
+
+Gestiona el menú responsive para pantallas < 768px. Busca los elementos por ID y registra todos los listeners necesarios.
+
+| Acción del usuario | Resultado |
+|---|---|
+| Clic en `#hamburger-btn` | Alterna apertura/cierre del panel |
+| Clic en `#nav-close-btn` | Cierra el panel |
+| Clic en el backdrop | Cierra el panel |
+| Clic en cualquier `<a>` del nav | Cierra el panel (via event delegation) |
+| Tecla `Escape` | Cierra el panel y devuelve el foco al botón |
+| Resize a ≥ 768px | Cierra el panel automáticamente |
+
+Clases CSS gestionadas:
+- `show-menu` → en `#page-nav-menu` (panel visible)
+- `is-active` → en `#hamburger-btn` (animación a ✕)
+- `is-visible` → en `#nav-backdrop` (fondo oscuro)
+- `nav-open` → en `<body>` (bloquea el scroll)
+
+Atributos ARIA actualizados:
+- `aria-expanded` en `#hamburger-btn` (`"true"` / `"false"`)
+
+### 4.13 Punto de Entrada (Línea 1298)
 
 ```javascript
 loadContent();  // Inicia todo el proceso
 ```
 
----
+## 5. Formato de los Archivos JSON de Contenido
 
-## 5. Archivo Auxiliar `images.js`
-
-> **⚠️ Estado:** Este archivo parece ser **código legacy** que no se utiliza activamente en el flujo actual. Ningún HTML lo referencia con `<script>`. El renderizado de imágenes ahora se maneja completamente en `contenido.js` a través de los archivos JSON.
-
-**Funcionalidad original:**
-- Cargaba un archivo `assets.json` (que no existe actualmente)
-- Inicializaba sliders de forma estática en `impacto-ambiental.html`
-- Contenía una versión alternativa de `initSlider()`
-
----
-
-## 6. Formato de los Archivos JSON de Contenido
-
-### 6.1 Estructura Raíz
+### 5.1 Estructura Raíz
 
 Cada archivo JSON de contenido sigue esta estructura:
 
@@ -479,9 +511,9 @@ Cada archivo JSON de contenido sigue esta estructura:
 | `metadata.{lang}.pageSubtitle` | String | ❌ No | Subtítulo bajo el título |
 | `blocks` | Array | ✅ Sí | Array de bloques de contenido |
 
-### 6.2 Tipos de Bloques
+### 5.2 Tipos de Bloques
 
-#### 6.2.1 Bloque `accordion`
+#### 5.2.1 Bloque `accordion`
 
 Crea uno o más acordeones desplegables.
 
@@ -510,7 +542,7 @@ Crea uno o más acordeones desplegables.
 | `sections[].content` | Object | ❌ | Contenido multimedia del acordeón |
 | `sections[].children` | Array | ❌ | Sub-acordeones o sub-elementos anidados |
 
-#### 6.2.2 Bloque `subtitle`
+#### 5.2.2 Bloque `subtitle`
 
 Muestra un título decorativo con descripción y lista opcional.
 
@@ -545,7 +577,7 @@ Muestra un título decorativo con descripción y lista opcional.
 
 > **Nota:** Los bloques `subtitle` también pueden usarse **dentro** de `children` de un acordeón.
 
-#### 6.2.3 Bloque `statistics`
+#### 5.2.3 Bloque `statistics`
 
 Muestra tarjetas de estadísticas numéricas en grid.
 
@@ -574,7 +606,7 @@ Muestra tarjetas de estadísticas numéricas en grid.
 | `statistics[].{lang}.dato` | String | ✅ | Valor numérico o dato destacado |
 | `statistics[].{lang}.titulo` | String | ✅ | Descripción del dato |
 
-#### 6.2.4 Bloque `evaluationCriteria`
+#### 5.2.4 Bloque `evaluationCriteria`
 
 Muestra una lista de criterios con cumplimiento (✓/✗).
 
@@ -605,7 +637,7 @@ Muestra una lista de criterios con cumplimiento (✓/✗).
 | `items[].{lang}.criterion` | String | ✅ | Nombre del criterio |
 | `items[].{lang}.detailText` | String | ❌ | Texto del tooltip al hacer hover en `!` |
 
-### 6.3 Tipos de Contenido (`content`)
+### 5.3 Tipos de Contenido (`content`)
 
 El objeto `content` dentro de una sección de acordeón puede tener estos tipos:
 
@@ -695,7 +727,7 @@ El objeto `content` dentro de una sección de acordeón puede tener estos tipos:
 }
 ```
 
-### 6.4 Contenido Múltiple en un Acordeón
+### 5.4 Contenido Múltiple en un Acordeón
 
 Un acordeón puede tener **múltiples piezas de contenido** usando un array:
 
@@ -719,9 +751,9 @@ Un acordeón puede tener **múltiples piezas de contenido** usando un array:
 
 ---
 
-## 7. Cómo Agregar Nuevas Secciones
+## 6. Cómo Agregar Nuevas Secciones
 
-### 7.1 Agregar un nuevo acordeón a una página existente
+### 6.1 Agregar un nuevo acordeón a una página existente
 
 1. Abrir el archivo JSON correspondiente en `contenido/`
 2. Agregar un nuevo objeto al array `blocks`:
@@ -748,7 +780,7 @@ Un acordeón puede tener **múltiples piezas de contenido** usando un array:
 }
 ```
 
-### 7.2 Agregar un sub-acordeón
+### 6.2 Agregar un sub-acordeón
 
 Dentro de una sección existente, agregar al array `children`:
 
@@ -773,7 +805,7 @@ Dentro de una sección existente, agregar al array `children`:
 }
 ```
 
-### 7.3 Agregar un subtítulo entre bloques
+### 6.3 Agregar un subtítulo entre bloques
 
 ```json
 {
@@ -789,7 +821,7 @@ Dentro de una sección existente, agregar al array `children`:
 }
 ```
 
-### 7.4 Agregar una nueva página completa
+### 6.4 Agregar una nueva página completa
 
 1. **Crear el HTML** — Copiar cualquier página interior (ej. `gobernanza.html`) y cambiar el `<title>`
 2. **Crear el JSON** — Crear `contenido/nueva-pagina.json` con la estructura raíz
@@ -810,9 +842,9 @@ Dentro de una sección existente, agregar al array `children`:
 
 ---
 
-## 8. Sistema de Traducción (Español / Inglés)
+## 7. Sistema de Traducción (Español / Inglés)
 
-### 8.1 Flujo de Traducción
+### 7.1 Flujo de Traducción
 
 ```
 Usuario hace clic en "EN/ES"
@@ -825,7 +857,7 @@ Usuario hace clic en "EN/ES"
         └── generateContentBlocks()    → regenera todo el contenido en el idioma
 ```
 
-### 8.2 Dónde están los textos traducibles
+### 7.2 Dónde están los textos traducibles
 
 | Elemento | Fuente de traducción |
 |---|---|
@@ -837,7 +869,7 @@ Usuario hace clic en "EN/ES"
 | Etiquetas nav del index | `translations.json` → `index.navItems` |
 | Título hero del index | `translations.json` → `index.headerSection` |
 
-### 8.3 Persistencia del Idioma
+### 7.3 Persistencia del Idioma
 
 - Se guarda en `localStorage` con la clave `'selectedLanguage'`
 - Al cargar cualquier página, se restaura automáticamente el idioma guardado
@@ -845,9 +877,9 @@ Usuario hace clic en "EN/ES"
 
 ---
 
-## 9. Restricciones y Limitaciones
+## 8. Restricciones y Limitaciones
 
-### 9.1 Restricciones Técnicas
+### 8.1 Restricciones Técnicas
 
 | Restricción | Descripción |
 |---|---|
@@ -858,7 +890,7 @@ Usuario hace clic en "EN/ES"
 | **Sin validación de JSON** | No hay validación del esquema JSON. Un JSON malformado dejará la página vacía sin error visible para el usuario. |
 | **PDFs protegidos por navegador** | El visor PDF (`<embed>`) depende del navegador. En algunos navegadores móviles los PDFs no se renderizan inline. |
 
-### 9.2 Restricciones de Contenido
+### 8.2 Restricciones de Contenido
 
 | Restricción | Descripción |
 |---|---|
@@ -868,7 +900,7 @@ Usuario hace clic en "EN/ES"
 | **Sin búsqueda** | Aunque el CSS define estilos para `.page-search-box`, no hay funcionalidad de búsqueda implementada. |
 | **Sin lazy loading** | Todas las imágenes y videos se cargan al abrir la sección, sin carga diferida. |
 
-### 9.3 Restricciones de los Archivos JSON
+### 8.3 Restricciones de los Archivos JSON
 
 | Regla | Detalle |
 |---|---|
@@ -880,9 +912,9 @@ Usuario hace clic en "EN/ES"
 
 ---
 
-## 10. Consejos de Uso
+## 9. Consejos de Uso
 
-### 10.1 Desarrollo Local
+### 9.1 Desarrollo Local
 
 ```bash
 # Opción 1: Live Server en VS Code
@@ -897,7 +929,7 @@ python -m http.server 8000
 npx serve .
 ```
 
-### 10.2 Debugging
+### 9.2 Debugging
 
 - **JSON inválido:** Abrir la consola del navegador (F12). Buscar errores de `fetch()` o `JSON.parse`.
 - **Acordeón no aparece:** Verificar que el `type` sea exactamente `"accordion"` y que `sections` sea un array.
@@ -905,7 +937,7 @@ npx serve .
 - **Traducciones no funcionan:** Verificar que las claves `es` y `en` existan en el JSON.
 - **Hash navigation:** Agregar `#id-de-seccion` a la URL para navegar directamente a un acordeón.
 
-### 10.3 Buenas Prácticas para Nuevos Contenidos
+### 9.3 Buenas Prácticas para Nuevos Contenidos
 
 1. **Nombrar IDs con kebab-case:** `"id": "mi-nueva-seccion"` (minúsculas, guiones).
 2. **Siempre incluir ambos idiomas** (`es` y `en`) aunque sea placeholder.
@@ -914,7 +946,7 @@ npx serve .
 5. **Comprimir imágenes** antes de agregarlas. Preferir formatos `.webp` o `.jpeg` sobre `.png` para fotografías.
 6. **No crear archivos de video mayores a 50 MB** sin convertirlos a formato web optimizado.
 
-### 10.4 Convenciones de Nombres
+### 9.4 Convenciones de Nombres
 
 | Tipo | Formato | Ejemplo |
 |---|---|---|
@@ -926,9 +958,9 @@ npx serve .
 
 ---
 
-## 11. Guía para Modificaciones Futuras
+## 10. Guía para Modificaciones Futuras
 
-### 11.1 Agregar un Nuevo Tipo de Contenido
+### 10.1 Agregar un Nuevo Tipo de Contenido
 
 Para agregar un nuevo tipo (ej. `"video-local"`, `"table"`, `"gallery"`):
 
@@ -958,7 +990,7 @@ Para agregar un nuevo tipo (ej. `"video-local"`, `"table"`, `"gallery"`):
    }
    ```
 
-### 11.2 Agregar un Tercer Idioma
+### 10.2 Agregar un Tercer Idioma
 
 1. **En `translations.json`** — Agregar una nueva clave raíz (ej. `"pt"` para portugués)
 2. **En cada JSON de contenido** — Agregar `"pt"` junto a `"es"` y `"en"` en cada objeto traducible
@@ -967,7 +999,7 @@ Para agregar un nuevo tipo (ej. `"video-local"`, `"table"`, `"gallery"`):
    - Modificar `updateLanguageButton()` para mostrar el siguiente idioma
 4. **En los HTML** — Considerar reemplazar el botón simple por un selector dropdown
 
-### 11.3 Cambiar el Header o Footer
+### 10.3 Cambiar el Header o Footer
 
 El header y footer están **hardcodeados en HTML pero traducidos vía JS**:
 
@@ -975,7 +1007,7 @@ El header y footer están **hardcodeados en HTML pero traducidos vía JS**:
 - **Para cambiar textos traducibles:** Editar `contenido/translations.json`
 - **Para cambiar redes sociales:** Editar las URLs directamente en los archivos HTML (están hardcodeadas en cada archivo)
 
-### 11.4 Cambiar el Estilo Visual
+### 10.4 Cambiar el Estilo Visual
 
 El estilo está centralizado en `style.css` con variables CSS:
 
@@ -991,16 +1023,17 @@ El estilo está centralizado en `style.css` con variables CSS:
 
 Cambiar estas variables afecta todo el sitio globalmente.
 
-### 11.5 Hacer Responsive (Mejoras)
+### 10.5 Menú Hamburguesa Responsive
 
-El CSS actual tiene media queries básicas. Para mejorar:
-- `style.css` línea ~267: Footer responsive
-- `style.css` línea ~763: Páginas interiores responsive
-- **Áreas por mejorar:** La navegación no tiene menú hamburguesa en móvil, los sliders podrían optimizarse para pantallas pequeñas.
+El menú hamburguesa ya está implementado. Ver [Sección 12](#12-menú-hamburguesa-responsive) para la documentación completa.
+
+Media queries relevantes en `style.css`:
+- `@media (max-width: 767px)` — Activa el menú hamburguesa y oculta la barra horizontal
+- `@media (max-width: 768px)` — Ajusta el grid de iconos de navegación del index y el video hero
 
 ---
 
-## 12. Referencia Rápida de Tipos de Contenido
+## 11. Referencia Rápida de Tipos de Contenido
 
 ### Plantilla: Sección con PDF
 
@@ -1141,3 +1174,164 @@ El CSS actual tiene media queries básicas. Para mejorar:
 ```
 
 ---
+
+## 12. Menú Hamburguesa Responsive
+
+> **Implementado en:** Junio 2026  
+> **Breakpoint:** `< 768px` (pantallas móviles)
+
+### 12.1 Elementos HTML añadidos
+
+Se agregaron tres elementos a **todos** los archivos HTML del proyecto:
+
+| Elemento | ID | Clase | Descripción |
+|---|---|---|---|
+| `<div>` | `nav-backdrop` | `nav-backdrop` | Backdrop semitransparente para cerrar al clic externo |
+| `<button>` (dentro del `<nav>`) | `nav-close-btn` | `nav-close-btn` | Botón ✕ dentro del panel lateral |
+| `<button>` (en el header) | `hamburger-btn` | `hamburger-btn` | Botón de 3 líneas que abre el menú |
+
+El `<nav>` también recibió el atributo `id="page-nav-menu"` para vincularlo con `aria-controls` del botón hamburguesa.
+
+### 12.2 Comportamiento Desktop (≥ 768px)
+
+- El botón hamburguesa tiene `display: none` — no es visible
+- El botón cerrar tiene `display: none` — no es visible
+- El backdrop tiene `display: none` — no existe en el layout
+- La navegación se muestra como barra horizontal normal (`display: flex`)
+
+### 12.3 Comportamiento Móvil (< 768px)
+
+- La barra horizontal desaparece del flujo
+- El botón hamburguesa aparece a la derecha del header
+- Al hacer clic en hamburguesa → el panel lateral se desliza desde la derecha
+- El panel es `position: fixed`, `z-index: 300` → **flota sobre el contenido**, no lo desplaza
+- El backdrop cubre toda la pantalla con `z-index: 299`, opacidad 50%
+
+### 12.4 Clases CSS de estado
+
+| Clase | Elemento | Efecto |
+|---|---|---|
+| `.show-menu` | `#page-nav-menu` | `transform: translateX(0)` — panel visible |
+| `.is-active` | `#hamburger-btn` | Animación de 3 líneas → ✕ |
+| `.is-visible` | `#nav-backdrop` | `opacity: 1` + `pointer-events: auto` |
+| `.nav-open` | `<body>` | `overflow: hidden` — bloquea el scroll |
+
+### 12.5 Transición y Animación
+
+```css
+/* Panel: deslizamiento lateral */
+.page-nav {
+  transform: translateX(100%);  /* Oculto por defecto */
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-nav.show-menu {
+  transform: translateX(0);
+}
+
+/* Backdrop: fade */
+.nav-backdrop {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav-backdrop.is-visible {
+  opacity: 1;
+}
+
+/* Hamburguesa → X */
+.hamburger-btn.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+```
+
+### 12.6 Ajustes Responsive adicionales en `index.html`
+
+#### Video hero con fuente responsive
+
+```html
+<video class="hero-img" autoplay loop muted playsinline>
+    <!-- Fuente ligera para móvil (carga prioritaria en pantallas ≤ 768px) -->
+    <source src="img/videoweb.mp4" type="video/mp4" media="(max-width: 768px)">
+    <!-- Fuente para desktop -->
+    <source src="img/videoweb3.mp4" type="video/mp4">
+</video>
+```
+
+- Se añadió el atributo `playsinline` para reproducción inline en iOS.
+- Se agregó una fuente adicional `videoweb.mp4` como fuente ligera para móvil.
+
+#### Grid de iconos de navegación
+
+```css
+@media (max-width: 768px) {
+  /* Dos columnas en lugar de fila única */
+  .nav-item { width: calc(50% - 10px); }
+
+  /* Círculos y SVG más pequeños */
+  .circle-icon { width: 100px; height: 100px; }
+  .circle-icon svg { width: 60px; height: 60px; }
+
+  /* Video hero con aspect-ratio en lugar de altura fija */
+  .hero-img { height: auto; aspect-ratio: 9 / 5; }
+}
+```
+
+### 12.7 Consideraciones al Agregar Páginas Nuevas
+
+Al crear una nueva página interior, copiar el bloque completo del header incluyendo los tres nuevos elementos:
+
+```html
+<body>
+  <!-- Backdrop para cerrar el menú móvil al hacer clic fuera -->
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  <div class="page-top-bar"></div>
+
+  <header class="page-header">
+    <div class="page-header-container">
+      <div class="page-logo">...</div>
+
+      <nav class="page-nav" id="page-nav-menu">
+        <!-- Botón cerrar (solo móvil) -->
+        <button class="nav-close-btn" id="nav-close-btn" aria-label="Cerrar menú">
+          <span></span><span></span>
+        </button>
+        <ul>...enlaces...</ul>
+      </nav>
+
+      <div class="language-toggle">
+        <button id="language-toggle-btn">EN</button>
+      </div>
+
+      <!-- Botón Hamburguesa (solo móvil) -->
+      <button class="hamburger-btn" id="hamburger-btn"
+        aria-label="Abrir menú" aria-expanded="false" aria-controls="page-nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+```
+
+El JS se inicializa automáticamente vía `setupMobileMenu()` que ya es llamada por `initializeContent()`. No se requiere código adicional.
+
+### 12.8 Resolución de Problemas (Gotchas)
+
+#### Conflicto de Apilamiento (Stacking Context) y Clics Bloqueados
+- **Problema:** En pantallas móviles, al desplegarse el menú, los enlaces no respondían a los clics ni permitían la redirección.
+- **Causa:** `.page-header` tiene `position: sticky` y `z-index: 100`, lo cual crea un stacking context propio. El menú lateral `.page-nav` (anidado en el header) con `z-index: 300` quedaba limitado por dicho contexto. El `.nav-backdrop` (con `z-index: 299` en el root context) se posicionaba por encima de todo el header, bloqueando las interacciones.
+- **Solución:** Se añadió una regla CSS para aumentar el nivel del header en el stacking context general del body mientras el menú esté desplegado:
+  ```css
+  body.nav-open .page-header {
+    z-index: 310; /* Por encima del backdrop (z-index: 299) */
+  }
+  ```
+
+---
+

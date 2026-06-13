@@ -13,11 +13,11 @@
       "statistics": [
         {
           "es": {
-            "dato": "3 787 461.25 kWh/año",
+            "dato": "3,787,461.25 kWh/año",
             "titulo": "Energía total procedente de energías renovables"
           },
           "en": {
-            "dato": "3 787 461.25kWh/year",
+            "dato": "3,787,461.25 kWh/year",
             "titulo": "Total energy from renewable sources"
           }
         },
@@ -38,11 +38,11 @@
       "statistics": [
         {
           "es": {
-            "dato": "82 487.63 m³",
+            "dato": "82,487.63 m³",
             "titulo": "Consumo de Agua"
           },
           "en": {
-            "dato": "82 487.63 m³",
+            "dato": "82,487.63 m³",
             "titulo": "Water Consumption"
           }
         },
@@ -58,43 +58,43 @@
         },
         {
           "es": {
-            "dato": "9307",
+            "dato": "9,307",
             "titulo": "Estudiantes que reciben una beca que cubre el 100% de sus aranceles"
           },
           "en": {
-            "dato": "9307",
+            "dato": "9,307",
             "titulo": "Students who receive a scholarship covering 100%of their fees"
           }
-        },{
+        },
+        {
           "es": {
-                "dato": "1 374 tCO₂e",
-                "titulo": "Emisiones totales del alcance 2"
-              },
-              "en": {
-                "dato": "1 374 tCO₂e",
-                "titulo": "Total emissions from scope 2"
-              }
-            },
-            {
-              "es": {
-                "dato": "2024",
-                "titulo": "Año en que comenzó a registrar sus emisiones a los estándares de GEI"
-              },
-              "en": {
-                "dato": "2024",
-                "titulo": "Year started recording emissions to GHG standards"
-              }
-            },
-            {
-              "es": {
-                "dato": "2022",
-                "titulo": "Ámbito total 1 y 2 para el año de referencia, en tCO2e"
-              },
-              "en": {
-                "dato": "2022",
-                "titulo": "Total scope 1 and 2 for reference year, in tCO2e"
-              }
-
+            "dato": "1,374 tCO₂e",
+            "titulo": "Emisiones totales del alcance 2"
+          },
+          "en": {
+            "dato": "1,374 tCO₂e",
+            "titulo": "Total emissions from scope 2"
+          }
+        },
+        {
+          "es": {
+            "dato": "2024",
+            "titulo": "Año en que comenzó a registrar sus emisiones a los estándares de GEI"
+          },
+          "en": {
+            "dato": "2024",
+            "titulo": "Year started recording emissions to GHG standards"
+          }
+        },
+        {
+          "es": {
+            "dato": "2022",
+            "titulo": "Ámbito total 1 y 2 para el año de referencia, en tCO2e"
+          },
+          "en": {
+            "dato": "2022",
+            "titulo": "Total scope 1 and 2 for reference year, in tCO2e"
+          }
         }
       ]
     }
