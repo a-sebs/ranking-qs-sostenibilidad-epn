@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <!-- Backdrop para cerrar el menú móvil al hacer clic fuera -->
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
     <header class="page-header">
         <div class="page-header-container">
             <!-- Logo -->
@@ -17,7 +20,12 @@
             </div>
 
             <!-- Navegación -->
-            <nav class="page-nav">
+            <nav class="page-nav" id="page-nav-menu">
+                <!-- Botón cerrar (solo móvil) -->
+                <button class="nav-close-btn" id="nav-close-btn" aria-label="Cerrar menú">
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul>
                     <li><a href="./" class="active">Inicio</a></li>
                     <li><a href="informe-anual.html">Informe Anual</a></li>
@@ -32,11 +40,20 @@
             <div class="language-toggle">
                 <button id="language-toggle-btn">EN</button>
             </div>
+
+            <!-- Botón Hamburguesa (solo móvil) -->
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="page-nav-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
     <div class="hero">
-        <video class="hero-img" autoplay loop muted>
+        <video class="hero-img" autoplay loop muted playsinline>
+            <source src="img/videoweb.mp4" type="video/mp4" media="(max-width: 768px)">
             <source src="img/videoweb3.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>

@@ -88,6 +88,7 @@ function initializeContent() {
   generateDynamicContent();
   setupHashUpdateOnToggle();
   handleHashNavigation();
+  setupMobileMenu();
 }
 
 function applySavedLanguage() {
@@ -1295,3 +1296,87 @@ function initOverlaySlider(sliderId) {
 // ========================================
 
 loadContent();
+
+// ========================================
+// 11. MENÚ HAMBURGUESA MÓVIL
+// ========================================
+
+function setupMobileMenu() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu      = document.getElementById('page-nav-menu');
+  const closeBtn     = document.getElementById('nav-close-btn');
+  const backdrop     = document.getElementById('nav-backdrop');
+
+  // Si no existen los elementos (e.g. página sin header), salir sin errores
+  if (!hamburgerBtn || !navMenu) return;
+
+  // --- Función: abrir el menú ---
+  function openMenu() {
+    navMenu.classList.add('show-menu');
+    hamburgerBtn.classList.add('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+    if (backdrop) {
+      backdrop.classList.add('is-visible');
+    }
+  }
+
+  // --- Función: cerrar el menú ---
+  function closeMenu() {
+    navMenu.classList.remove('show-menu');
+    hamburgerBtn.classList.remove('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+    if (backdrop) {
+      backdrop.classList.remove('is-visible');
+    }
+  }
+
+  // --- Toggle al hacer clic en el botón hamburguesa ---
+  hamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navMenu.classList.contains('show-menu')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // --- Cerrar al hacer clic en el botón X del panel ---
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      closeMenu();
+    });
+  }
+
+  // --- Cerrar al hacer clic en el backdrop (fuera del menú) ---
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      closeMenu();
+    });
+  }
+
+  // --- Cerrar al hacer clic en cualquier enlace del nav ---
+  // Usamos event delegation para capturar tanto enlaces estáticos como dinámicos
+  navMenu.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link) {
+      closeMenu();
+    }
+  });
+
+  // --- Cerrar con tecla Escape ---
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('show-menu')) {
+      closeMenu();
+      hamburgerBtn.focus(); // Devolver foco al botón (accesibilidad)
+    }
+  });
+
+  // --- Cerrar automáticamente si la pantalla se hace más grande (resize a desktop) ---
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && navMenu.classList.contains('show-menu')) {
+      closeMenu();
+    }
+  });
+}

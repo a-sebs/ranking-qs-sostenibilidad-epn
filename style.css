@@ -7,12 +7,13 @@
 
 :root {
   /* Paleta Institucional */
-  --accent: #E0A32F; /* Dorado */
+  --accent: #E0A32F;
+  /* Dorado */
   --primary-dark: #3A3A3A;
   --footer-bg: #17243d;
   --text-white: #ffffff;
   --text-grey: rgba(255, 255, 255, 0.6);
-  
+
   /* Sistema OKLCH para Background y Foreground */
   --background: oklch(1 0 0);
   --foreground: oklch(0.2 0 0);
@@ -62,12 +63,12 @@ body::before {
 
 .hero {
   position: relative;
-  height: auto; /* Altura definida en el diseño original  */
+  height: auto;
   overflow: visible;
   display: flex;
   flex-direction: column;
   box-shadow: 0 6px 16px #4e4e4edc, inset 0 -2px 8px rgba(106, 105, 105, 0.08);
-  
+
 }
 
 .hero-img {
@@ -102,9 +103,10 @@ body::before {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   max-width: 960px;
   margin: 0 auto 150px;
+  padding: 0 15px;
 }
 
 .nav-item {
@@ -130,7 +132,8 @@ body::before {
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 15px;
-  color: #000; /* Iconos en negro */
+  color: #000;
+  /* Iconos en negro */
 }
 
 .nav-label {
@@ -232,7 +235,8 @@ footer {
 }
 
 /* Contacto e Información */
-.contact-list, .info-list {
+.contact-list,
+.info-list {
   list-style: none;
 }
 
@@ -269,9 +273,12 @@ footer {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .footer-logo-row, .contact-item {
+
+  .footer-logo-row,
+  .contact-item {
     justify-content: center;
   }
+
   .social-links {
     justify-content: center;
   }
@@ -472,7 +479,7 @@ footer {
   flex-shrink: 0;
 }
 
-.accordion-root > .accordion-summary {
+.accordion-root>.accordion-summary {
   padding: 20px;
   font-size: 1rem;
 }
@@ -482,7 +489,7 @@ footer {
   border-radius: 0 4px 4px 0;
 }
 
-.accordion-nested > .accordion-summary {
+.accordion-nested>.accordion-summary {
   padding: 15px 20px;
   font-size: 0.95rem;
   color: var(--primary-dark);
@@ -499,19 +506,19 @@ footer {
   color: var(--accent);
 }
 
-.accordion-nested > .accordion-summary:hover {
+.accordion-nested>.accordion-summary:hover {
   background-color: #f0f0f0;
 }
 
-.page-accordion-item[open] > .page-accordion-summary,
-.accordion-root[open] > .accordion-summary {
+.page-accordion-item[open]>.page-accordion-summary,
+.accordion-root[open]>.accordion-summary {
   background-color: #f9f9f9;
   color: var(--accent);
   border-bottom: 2px solid var(--accent);
 }
 
 .page-accordion-summary::after,
-.accordion-root > .accordion-summary::after {
+.accordion-root>.accordion-summary::after {
   content: '▼';
   font-size: 0.75rem;
   transition: transform 0.3s ease;
@@ -519,11 +526,11 @@ footer {
 }
 
 .page-accordion-item[open] .page-accordion-summary::after,
-.accordion-root[open] > .accordion-summary::after {
+.accordion-root[open]>.accordion-summary::after {
   transform: rotate(180deg);
 }
 
-.accordion-nested > .accordion-summary::after {
+.accordion-nested>.accordion-summary::after {
   content: '';
   width: 12px;
   height: 12px;
@@ -534,7 +541,7 @@ footer {
   margin-left: auto;
 }
 
-.accordion-nested[open] > .accordion-summary::after {
+.accordion-nested[open]>.accordion-summary::after {
   transform: rotate(45deg);
 }
 
@@ -545,7 +552,7 @@ footer {
   animation: accordionSlideDown 0.3s ease;
 }
 
-.accordion-nested > .accordion-content {
+.accordion-nested>.accordion-content {
   padding: 0;
   background-color: #ffffff;
   border-top: 1px solid #e0e0e0;
@@ -556,6 +563,7 @@ footer {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -617,7 +625,7 @@ footer {
   display: block;
 }
 
-.pdf-container > div {
+.pdf-container>div {
   width: 100%;
   height: 100%;
 }
@@ -833,7 +841,7 @@ footer {
   padding: 0;
   background-color: #f5f5f5;
   border-radius: 0;
-  
+
   /* Ocultar scrollbar manteniendo funcionalidad */
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -976,13 +984,14 @@ footer {
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .accordion-nested > .accordion-summary,
+
+  .accordion-nested>.accordion-summary,
   .campus-subaccordion-summary {
     padding: 12px 15px;
     font-size: 0.9rem;
   }
 
-  .accordion-nested > .accordion-content,
+  .accordion-nested>.accordion-content,
   .campus-subaccordion-content {
     padding: 0;
   }
@@ -1383,6 +1392,7 @@ footer {
     opacity: 0;
     transform: translateY(5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1451,11 +1461,11 @@ footer {
   .content-subtitle {
     margin: 12px 0 20px 0;
   }
-  
+
   .subtitle-title {
     font-size: 1.3rem;
   }
-  
+
   .evaluation-criteria-section {
     margin: 10px 0 25px 0;
   }
@@ -1466,15 +1476,15 @@ footer {
     margin: 10px 0 15px 0;
     padding: 0 15px 10px 15px;
   }
-  
+
   .subtitle-title {
     font-size: 1.2rem;
   }
-  
+
   .subtitle-description {
     font-size: 0.9rem;
   }
-  
+
   .evaluation-criteria-section {
     margin: 8px 0 20px 0;
     padding: 15px 0;
@@ -1595,5 +1605,256 @@ footer {
 
   .statistics-label {
     font-size: 0.65rem;
+  }
+}
+
+/* ========================================
+   MENÚ HAMBURGUESA RESPONSIVE
+   Activo en pantallas < 768px
+   ======================================== */
+
+/* --- Botón Hamburguesa --- */
+.hamburger-btn {
+  display: none;
+  /* Oculto en desktop */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 2px solid var(--footer-bg);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  z-index: 200;
+}
+
+.hamburger-btn:hover {
+  background-color: var(--footer-bg);
+}
+
+.hamburger-btn:hover .hamburger-line {
+  background-color: var(--text-white);
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--footer-bg);
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+/* Estado activo del hamburger (animación a X) */
+.hamburger-btn.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-btn.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.hamburger-line {
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.2s ease;
+}
+
+/* --- Backdrop (fondo oscuro al abrir menú móvil) --- */
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  /* top/right/bottom/left: 0 */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 299;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-backdrop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- Botón de Cierre dentro del panel móvil --- */
+.nav-close-btn {
+  display: none;
+  /* Oculto en desktop */
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.nav-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.nav-close-btn span {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: var(--footer-bg);
+  top: 50%;
+  left: 50%;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+.nav-close-btn span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav-close-btn span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ========================================
+   MEDIA QUERY MÓVIL (< 768px)
+   ======================================== */
+
+@media (max-width: 767px) {
+
+  /* Mostrar el botón hamburguesa */
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Mostrar el backdrop en DOM (visibilidad controlada por clase) */
+  .nav-backdrop {
+    display: block;
+  }
+
+  /* Mostrar el botón de cierre dentro del panel */
+  .nav-close-btn {
+    display: block;
+  }
+
+  /* El header no necesita el nav en el flujo normal */
+  .page-header-container {
+    gap: 16px;
+  }
+
+  /* Ocultar el toggle de idioma cuando el menú está abierto para evitar superposición */
+  /* (se queda visible en la barra pero el nav flota sobre todo) */
+
+  /* --- Panel de navegación flotante --- */
+  .page-nav {
+    /* Posición fija, flotando sobre el contenido */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(300px, 85vw);
+    /* Panel lateral */
+    height: 100dvh;
+    background-color: #ffffff;
+    z-index: 300;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 70px 0 30px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+
+    /* Estado CERRADO: deslizado fuera de pantalla */
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Evitar que el flex del header lo mueva */
+    margin: 0;
+    flex: none;
+
+    /* Scrollable si hay muchos items */
+    overflow-y: auto;
+  }
+
+  /* Estado ABIERTO: con la clase .show-menu */
+  .page-nav.show-menu {
+    transform: translateX(0);
+  }
+
+  /* Lista de enlaces en columna */
+  .page-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .page-nav ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .page-nav a {
+    display: block;
+    padding: 16px 28px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--footer-bg);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .page-nav a:hover {
+    background-color: rgba(224, 163, 47, 0.08);
+    padding-left: 36px;
+    color: var(--accent);
+  }
+
+  .page-nav a.active {
+    color: var(--accent);
+    background-color: rgba(224, 163, 47, 0.06);
+    border-left: 3px solid var(--accent);
+  }
+
+  /* Quitar el subrayado de active en móvil (sustituido por border-left) */
+  .page-nav a.active::after {
+    display: none;
+  }
+
+  /* Bloquear scroll del body cuando el menú está abierto */
+  body.nav-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-item {
+    width: calc(50% - 10px);
+  }
+
+  .circle-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hero-img {
+    height: auto;
+    aspect-ratio: 9 / 5;
   }
 }
