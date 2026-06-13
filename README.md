@@ -2,7 +2,7 @@
 
 > **Versión:** 1.1  
 > **Fecha:** Junio 2026  
-> **Proyecto:** Sitio web de Sostenibilidad para la Escuela Politécnica Nacional (EPN), orientado al ranking QS Sustainability.
+> **Proyecto:** Sitio web recopilatorio de documentos importantes para la postulación de la Escuela Politécnica Nacional (EPN) en el Ranking QS Sustainability.
 
 ---
 
